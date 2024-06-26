@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { BtnG } from '../ui/Btn';
 import Slider from 'react-slick';
 
-const BrendsSlider = ({data}) => {
+const NewsSlider = ({data}) => {
   const sliderRef = useRef(null);
 
   const settings = {
@@ -42,11 +42,13 @@ const BrendsSlider = ({data}) => {
         <Slider ref={sliderRef} {...settings}>
           {data.map((item) => (
                 <div key={item.id} className='border border-[--border]  rounded-[10px] overflow-hidden '> 
-                  <div className='bg-white h-[152px] lg:h-[196px] flex justify-center items-center border-b border-[--border]' >
-                    <img src={item.img} alt="image" />
+                  <div className='bg-white h-[152px] lg:h-[320px] flex justify-center items-center border-b border-[--border]' >
+                    <img src={item.img} alt="image" className='w-full h-full ' />
                   </div>
-                  <div className='p-[15px] lg:p-[20px] '>
-                    <p className='w-[70%] lg:w-[90%] text-[12px] md:text-[14px] lg:text-[16px] font-medium lg:leading-[140%] leading-[120%] '>{item.title} </p>
+                  <div className='p-[10px] lg:p-[15px] '>
+                    <span className='text-[12px] font-normal leading-[normal] text-[--text] pb-1 '>{item.date} </span>
+                    <p className='w-[70%] lg:w-[90%] text-[12px] md:text-[14px] lg:text-[16px] font-medium lg:leading-[140%] leading-[120%] mb-[10px] lg:mb-[15px] '>{item.title} </p>
+                    <p className='text-[12px] lg:text-[14px] font-medium leading-[118%] pb-1 text-[--text] w-[85%] '> {item.content} </p>
                   </div>
                 </div>
           ))}
@@ -72,11 +74,11 @@ const BrendsSlider = ({data}) => {
         </div>
 
         <div className="flex sm:hidden lg:flex  gap-4">
-          <BtnG title={'Сертификаты'} />
+          <BtnG title={'Все новости'} />
         </div>
       </div>
     </>
   );
 };
 
-export default BrendsSlider;
+export default NewsSlider;

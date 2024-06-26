@@ -1,6 +1,7 @@
 import Accordion from "../components/home/Accordion"
 import Brends from "../components/home/Brends"
 import Customer from "../components/home/Marquee"
+import News from "../components/home/News"
 import Section1 from "../components/home/Section1"
 import Section2 from "../components/home/Section2"
 import Section3 from "../components/home/Section3"
@@ -19,6 +20,7 @@ const Home = () => {
     <Customer/>
     <Brends/>
     <Accordion/>
+    <News/>
     </>
   )
 }
