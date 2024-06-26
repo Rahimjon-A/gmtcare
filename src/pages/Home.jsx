@@ -1,5 +1,6 @@
 import Accordion from "../components/home/Accordion"
 import Brends from "../components/home/Brends"
+import Map from "../components/home/Map"
 import Customer from "../components/home/Marquee"
 import News from "../components/home/News"
 import Section1 from "../components/home/Section1"
@@ -21,6 +22,7 @@ const Home = () => {
     <Brends/>
     <Accordion/>
     <News/>
+    <Map/>
     </>
   )
 }
