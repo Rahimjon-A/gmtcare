@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pri : #088269;
+  --second: #202020;
+  --text: #7A7687;
+  --border: #D5D1E1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f7f3;
+  font-family: "Manrope", sans-serif;
+  color: var(--second);
+  font-style: normal;
+}
+
+
+.container {
+  max-width: 1310px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 15px ;
+}
+
+.slick-slide > div {
+  margin :0 5px;
+}
