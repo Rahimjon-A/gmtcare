@@ -1,5 +1,7 @@
 import Accordion from "../components/home/Accordion"
 import Brends from "../components/home/Brends"
+import Footer from "../components/home/Footer"
+import Mail from "../components/home/Mail"
 import Map from "../components/home/Map"
 import Customer from "../components/home/Marquee"
 import News from "../components/home/News"
@@ -23,6 +25,8 @@ const Home = () => {
     <Accordion/>
     <News/>
     <Map/>
+    <Mail/>
+    <Footer/>
     </>
   )
 }

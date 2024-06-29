@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from '../../ui/Carousel';
 import { BtnG, BtnWG } from '../../ui/Btn';
-import { carousel } from '../../library/content';
+import { myData } from '../../library/myData';
 import Title from '../../ui/Title';
 
 const Section4 = () => {
@@ -32,7 +32,7 @@ const Section4 = () => {
       </div>
 
       <div className="overflow-hidden">
-        <Carousel carousel={carousel} />
+        <Carousel carousel={myData} />
       </div>
     </div>
   );

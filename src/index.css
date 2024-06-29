@@ -34,3 +34,46 @@ body {
 .slick-slide > div {
   margin :0 5px;
 }
+
+.mail {
+  background-image: url("./mail.png");
+  background-repeat: no-repeat;
+}
+
+.ant-collapse {
+  background-color: #088269 !important;
+  color: #fff !important;
+}
+
+.ant-collapse-item {
+  background-color: #088269 !important;
+  color: #fff !important;
+}
+
+.ant-collapse-header {
+  background-color: #088269 !important;
+  color: #fff !important;
+}
+
+.ant-collapse-content {
+  background-color: #088269 !important;
+  color: #fff !important;
+}
+
+.ant-collapse-content-box {
+  color: #fff !important;
+}
+
+.plus-icon {
+  color: #fff !important;
+  font-size: 16px;
+}
+
+.ant-collapse-header:hover .plus-icon {
+  color: #fff !important;
+}
+
+.ant-collapse-item-active .plus-icon {
+  transform: rotate(45deg);
+}
+

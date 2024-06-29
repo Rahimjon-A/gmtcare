@@ -5,39 +5,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { BtnG, BtnWG } from '../../ui/Btn';
+import { kibinet } from '../../library/content';
 
-const data = [
-  {
-    id: 1,
-    img: './kobinet1.png',
-    title: 'Экспресс лаборатория',
-  },
-  {
-    id: 2,
-    img: './kobinet3.png',
-    title: 'Лазерная терапия',
-  },
-  {
-    id: 3,
-    img: './kobinet3.png',
-    title: 'Операционный блок',
-  },
-  {
-    id: 4,
-    img: './kobinet1.png',
-    title: 'Экспресс лаборатория',
-  },
-  {
-    id: 5,
-    img: './kobinet3.png',
-    title: 'Лазерная терапия',
-  },
-  {
-    id: 6,
-    img: './kobinet3.png',
-    title: 'Операционный блок',
-  },
-];
+
 
 const Section2 = () => {
   const sliderRef = useRef(null);
@@ -69,7 +39,7 @@ const Section2 = () => {
 
       <div className="overflow-hidden ">
         <Slider ref={sliderRef} {...settings}>
-          {data.map((item) => (
+          {kibinet.map((item) => (
             <div key={item.id} className="border max-w-[420px]  border-[--border] rounded-[10px]">
               <div className="lg:h-[517px]">
                 <img src={item.img} alt={item.title} className="w-full h-full" />

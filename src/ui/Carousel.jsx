@@ -1,4 +1,4 @@
-import React, { useRef} from 'react';
+import React, { useRef, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,7 +8,7 @@ import { LuBarChartHorizontalBig } from 'react-icons/lu';
 
 import Slider from 'react-slick';
 
-const Carousel = ({carousel}) => {
+const Carousel = ({ carousel }) => {
   const sliderRef = useRef(null);
 
   const settings = {
@@ -19,7 +19,7 @@ const Carousel = ({carousel}) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    draggable: true, 
+    draggable: true,
     swipe: true,
     responsive: [
       {
@@ -38,19 +38,38 @@ const Carousel = ({carousel}) => {
       },
     ],
   };
+  const getStatusStyles = (status) => {
+    switch (status) {
+      case "Новинка":
+        return { backgroundColor: "#E1EFE6", color: "#088269", borderColor: "#088269" };
+      case "Хит продаж":
+        return { backgroundColor: "#E6E6FD", color: "#424285", borderColor: "#424285" };
+      case "-30%":
+        return { backgroundColor: "#FFE095", color: "#AD7B00", borderColor: "#AD7B00" };
+      default:
+        return { backgroundColor: "#FFFFFF", color: "inherit", borderColor: "transparent" };
+    }
+  };
 
   return (
     <>
-      <div className="relative">
+      <div className="relative  ">
         <Slider ref={sliderRef} {...settings}>
           {carousel.map((item) => (
             <div
               key={item.id}
-              className="rounded-[10px] w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "
+              className="rounded-[10px]  w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "
             >
               <div className="bg-white p-[10px] md:p-[30px] lg:p-[50px] relative mb-[15px] lg:mb-[20px]  flex justify-center items-center border-b border-[--border]">
-                <img src={item.img} alt="image" className='w-full h-[172px] md:h-[142px]  lg:h-[229px]' />
-                <span className="absolute top-[15px] left-[15px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] bg-[#E1EFE6] py-1 px-[10px] rounded-full">
+                <img
+                  src={item.img}
+                  alt="image"
+                  className="w-full h-[172px] md:h-[142px]  lg:h-[229px]"
+                />
+                <span
+                  style={getStatusStyles(item.status)}
+                  className={`absolute top-[15px] left-[15px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] bg-[${status}] py-1 px-[10px] rounded-full`}
+                >
                   {item.status}
                 </span>
                 <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
@@ -59,9 +78,9 @@ const Carousel = ({carousel}) => {
                 </div>
               </div>
 
-              <div className="flex flex-col px-[15px] pb-[10px] lg:pb-[15px]">
-                <div className="flex flex-col w-[90%] xl:w-[60%] mb-[15px]">
-                  <p className="text-[16px] lg:text-[18px] font-semibold leading-[normal] mb-[10px]">
+              <div className="flex flex-col   px-[15px] pb-[10px] lg:pb-[15px]">
+                <div className="flex flex-col   mb-[15px]">
+                  <p className="text-[16px] lg:text-[18px] w-[90%] font-semibold leading-[normal] mb-[10px]">
                     {item.title}
                   </p>
                   <span className="text-[12px] font-normal leading-[normal] text-[--text] mb-1">
@@ -74,6 +93,7 @@ const Carousel = ({carousel}) => {
                     {item.price} руб.
                   </p>
                 </div>
+
                 <BtnGG title={'Добавить в корзину'} />
               </div>
             </div>

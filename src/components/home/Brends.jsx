@@ -5,7 +5,8 @@ import { BtnG } from '../../ui/Btn';
 
 const Brends = () => {
   return (
-    <div className="container grid grid-cols-1 lg:grid-cols-[1fr_3fr] overflow-hidden py-[60px] md:py-[120px] lg:py-[150px] ">
+    
+    <div className="container grid grid-cols-1 lg:grid-cols-[1fr_3fr] overflow-hidden pb-[60px] md:pb-[120px] lg:pb-[150px] ">
       <div className="mb-[31px] lg:mb-0 flex justify-between items-center lg:items-start ">
 
         <div className=''>

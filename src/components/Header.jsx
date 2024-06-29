@@ -9,8 +9,16 @@ import { Link } from 'react-router-dom';
 import { BtnG, BtnW } from '../ui/Btn';
 import { FiPhone } from 'react-icons/fi';
 import { IoMenuSharp } from 'react-icons/io5';
+import Category from '../ui/Category';
+import { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import Menu from '../ui/Menu';
+import logo from "../../public/Logo.svg"
 
 const Header = () => {
+  const [cat, setCat] = useState(false);
+  const [menu, setMenu] = useState(false);
+
   return (
     <>
       {/* Top navbar */}
@@ -19,7 +27,7 @@ const Header = () => {
           <ul className="flex items-center gap-[20px] ">
             <li>
               <Link
-                to={'/'}
+                to={'/about'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 О компании
@@ -27,7 +35,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to={'/'}
+                to={'/dostavka'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 Доставка
@@ -81,33 +89,54 @@ const Header = () => {
       </div>
 
       {/* search bar */}
-      <div className="border-b py-[25px]">
+      <div className="border-b md:py-[25px]">
         <div className=" flex justify-between gap-5 container ">
           <div className="flex flex-col md:flex-row items-start gap-[25px] lg:gap-[35px] w-full ">
+            <Link to={'/'}>
+              <img
+                src={logo}
+                alt="logo"
+                className=" hidden md:block md:w-[73px] md:h-[30px] lg:w-[96px] lg:h-[41px] lg:mr-[16px] "
+              />
+            </Link>
 
-            <img src="./Logo.svg" alt="logo" className=" hidden md:block md:w-[73px] md:h-[30px] lg:w-[96px] lg:h-[41px] lg:mr-[16px] " />
-
-            <div className="flex md:hidden justify-between items-center w-full  ">
-              <img src="./Logo.svg" alt="logo" className="w-[96px] h-[41px] mr-[16px] " />
+            <div className="flex  md:hidden justify-between items-center w-full  ">
+              <img src={logo} alt="logo" className="w-[96px] h-[41px] mr-[16px] " />
               <span className="flex  items-center gap-[20px] ">
                 <FiPhone className="w-[24px] h-[24px] " />
-                <IoMenuSharp className="w-[30px] h-[30px] " />
+                <span
+                  onClick={() => setMenu((prev) => !prev)}
+                  className=" cursor-pointer hover:text-[--pri] duration-200 "
+                >
+                  {menu ? (
+                    <AiOutlineClose className="w-[30px] h-[30px] " />
+                  ) : (
+                    <IoMenuSharp className="w-[30px] h-[30px] " />
+                  )}{' '}
+                </span>
               </span>
             </div>
 
-            <div className="flex w-full md:w-[465px] lg:w-[565] bg-[#d5d1e1] border rounded-full overflow-hidden ">
-              <span className="flex cursor-pointer gap-1 items-center relative z-10 bg-[#EFEFEF] py-2 px-2 md:px-4 rounded-full text-[12px] text-[--text] font-semibold min-w-[117px] ">
-                Все категории <FaCaretDown />
-              </span>
-              <input
-                type="text"
-                id="main"
-                className="ml-[-28px] f  bg-[#f8f7f3] flex-1 outline-none pl-[44px] text-[14px] rounded-full "
-                placeholder="Поиск"
-              />
-              <label htmlFor="main" className="bg-[#d5d1e1] px-2 md:px-4 flex items-center ">
-                <IoIosSearch className=" text-[--text]  text-[18px] "></IoIosSearch>
-              </label>
+            <div className=" relative w-full md:w-auto ">
+              <div className="flex w-full md:w-[465px] lg:w-[565] bg-[#d5d1e1] border rounded-full overflow-hidden ">
+                <span
+                  onClick={() => setCat((prev) => !prev)}
+                  className="flex relative cursor-pointer gap-1 items-center  z-10 bg-[#EFEFEF] py-2 px-2 md:px-4 rounded-full text-[12px] text-[--text] font-semibold min-w-[117px] "
+                >
+                  Все категории{' '}
+                  <FaCaretDown className={`${cat ? ' rotate-180' : ''} duration-200 `} />
+                </span>
+                <input
+                  type="text"
+                  id="main"
+                  className="ml-[-28px] f  bg-[#f8f7f3] flex-1 outline-none pl-[44px] text-[14px] rounded-full "
+                  placeholder="Поиск"
+                />
+                <label htmlFor="main" className="bg-[#d5d1e1] px-2 md:px-4 flex items-center ">
+                  <IoIosSearch className=" text-[--text]  text-[18px] "></IoIosSearch>
+                </label>
+              </div>
+              <Category cat={cat} />
             </div>
 
             <p className="hidden xl:block text-[#7A7687] text-[12px] font-medium leading-[normal]">
@@ -145,16 +174,19 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <Menu menu={menu} />
       </div>
 
       {/* sort / categories */}
       <div className="border-b hidden md:block py-[20px]">
         <div className=" flex justify-between container ">
           <ul className="text-[--second] flex items-center gap-[15px] lg:gap-[25px] ">
-            <li className="flex items-center gap-1 text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              <RiMenu2Fill />
-              <span>Каталог</span>
-            </li>
+            <Link to={'/catalog'}>
+              <li className="flex items-center gap-1 text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
+                <RiMenu2Fill />
+                <span>Каталог</span>
+              </li>
+            </Link>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
               Производители
             </li>
@@ -181,13 +213,13 @@ const Header = () => {
               <CiLocationOn />
             </span>
 
-            <div className='bg-[--pri] rounded-full text-white p-2 xl:hidden ' >
-              <FiPhone/>
+            <div className="bg-[--pri] rounded-full text-white p-2 xl:hidden ">
+              <FiPhone />
             </div>
-           <div className=' gap-[10px] hidden xl:flex '>
-           <BtnW title={'+7(495)000-00-00'} />
-           <BtnG title={'Заказать звонок'} />
-           </div>
+            <div className=" gap-[10px] hidden xl:flex ">
+              <BtnW title={'+7(495)000-00-00'} />
+              <BtnG title={'Заказать звонок'} />
+            </div>
           </div>
         </div>
       </div>

@@ -57,7 +57,8 @@ export default function CustomizedAccordions() {
   };
 
   return (
-    <div className="bg-[--pri] py-[60px] lg:py-[120px]">
+    
+    <div className="bg-[--pri] py-[60px] lg:py-[120px] mb-[60px] md:mb-[120px] lg:mb-[150px] ">
       <div className="container grid grid-cols-1 md:grid-cols-2">
         <div className="text-white">
           <p className="text-[18px] md:text-[20px] lg:text-[30px] font-medium leading-[120%] text-white mb-[50px] ">Информация о компании</p>
@@ -67,7 +68,6 @@ export default function CustomizedAccordions() {
           <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <Typography>
-                {' '}
                 <p className="text-[18px] ">О компании</p>{' '}
               </Typography>
             </AccordionSummary>
