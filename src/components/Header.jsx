@@ -13,7 +13,7 @@ import Category from '../ui/Category';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import Menu from '../ui/Menu';
-import logo from "../../public/Logo.svg"
+import logo from '../../public/Logo.svg';
 
 const Header = () => {
   const [cat, setCat] = useState(false);
@@ -59,7 +59,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to={'/'}
+                to={'/blog'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 Блог
@@ -193,9 +193,11 @@ const Header = () => {
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
               Кабинеты под ключ
             </li>
-            <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Услуги
-            </li>
+            <Link to={"/services"}>
+              <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
+                Услуги
+              </li>
+            </Link>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
               Акции
             </li>

@@ -102,7 +102,7 @@ const Dostavka = () => {
       </div>
 
       <div className=" container custom-margin grid grid-cols-1 lg:grid-cols-2 ">
-        <div>
+        <div >
           <span className=" block w-[70%] md:w-[100%] lg:w-[70%] xl:w-[60%] ">
             <Title text={`Правила получения товара  в пункте выдачи`} />
           </span>
@@ -118,21 +118,21 @@ const Dostavka = () => {
             <p className="pt-[15px] md:pt-[25px] cursor-text font-semibold ">
               Подготовить документы
             </p>
-            <p className="text-3 md:text-[14px] lg:text-4 text-[--text] ">
+            <p className="text-[12px] md:text-[14px] lg:text-4 text-[--text] ">
               Предварительно ознакомиться с условиями выдачи грузов на сайте и подготовьте нужные
               документы
             </p>
           </div>
           <div className="flex flex-col gap-[15px] md:gap-[10px] lg:gap-[15px]  border-t border-[--border] pb-[10px] lg:pb-[20px] ">
             <p className="pt-[15px] md:pt-[25px] cursor-text font-semibold ">Проверка упаковки</p>
-            <p className="text-3 md:text-[14px] lg:text-4 text-[--text] ">
+            <p className="text-[12px] md:text-[14px] lg:text-4 text-[--text] ">
               При получении необходимо внимательно осмотреть упаковку груза на наличие механических
               повреждений и нарушений целостности упаковки
             </p>
           </div>
           <div className="flex flex-col gap-[15px] md:gap-[10px] lg:gap-[15px]  border-t border-[--border] pb-[10px] lg:pb-[20px] ">
             <p className="pt-[15px] md:pt-[25px] cursor-text font-semibold ">Проверка товара</p>
-            <p className="text-3 md:text-[14px] lg:text-4 text-[--text] ">
+            <p className="text-[12px] md:text-[14px] lg:text-4 text-[--text] ">
               Вскрыть каждую упаковку и проверите товар по количеству согласно накладной поставщика
               и на наличие повреждений товара внутри тары
             </p>
@@ -141,14 +141,46 @@ const Dostavka = () => {
       </div>
 
       <CustomizedAccordions />
+
+      <div className=' container grid grid-cols-2 custom-margin'>
+        <div className=' order-1'>
+          <p className='text-[--second] font-medium leading-[120%] text-[18px] md:text-[20px] xl:text-[30px] pb-[25px] md:pb-[30px] lg:pb-0  '>Вы сможете забрать оборудование <br /> <span className='text-[--pri] '>самостоятельно</span> из нашего офиса </p>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 mb-[10px] gap-[10px] col-span-2 lg:col-span-1 order-2 lg:order-1  '>
+          <div className='border border-[--border] rounded-[10px] p-[25px]  bg-white '>
+              <p className='mb-[15px] text-[16px] lg:text-[18px] font-semibold '>Контакты</p>
+              <p className=' custom-text text-[--text] font-medium mb-1 '>+7 (000) 000-00-00</p>
+              <p className=' custom-text text-[--text] font-medium '>info@mail.ru</p>
+          </div>
+          <div className='border border-[--border] rounded-[10px] p-[25px]  bg-white '>
+              <p className='mb-[15px] text-[16px] lg:text-[18px] font-semibold '>Режим работы</p>
+              <p className=' custom-text text-[--text] font-medium mb-1 '>пн-пт: 09:00-19:00</p>
+              <p className=' custom-text text-[--text] font-medium '>сб-вс: выходной</p>
+          </div>
+        </div>
+
+        <div className=" order-1 w-full relative border border-[--border] rounded-[10px] overflow-hidden mb-[11px] col-span-2 ">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4928.13349616861!2d69.22925989857053!3d41.31567817943225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba28832acd7%3A0xf05928b7bdb7ab15!2sSamarqand%20Darvoza%2C%20Samarqand%20Darvoza%20ko&#39;chasi%205a%2C%20%D0%A2%D0%BEshkent%2C%20Toshkent%2C%20O%60zbekiston!5e0!3m2!1suz!2s!4v1719611199524!5m2!1suz!2s"
+            width={'100%'}
+            height="450"
+          ></iframe>
+
+          <span className=" absolute bottom-5 right-5 ">
+            <BtnG title={'Построить маршрут'} />
+          </span>
+        </div>
+      </div>
+
       <Accordion />
 
       <div className="grid grid-cols-1 gap-[30px] lg:gap-0 lg:grid-cols-2 container custom-margin ">
         <div>
           <Title text={'Вам нужна консультация?'} />
           <p className="text-[--second] w-[80%] custom-text pt-[10px] md:pt-[20px] lg:pt-[25px] font-medium ">
-            Задайте их по номеру телефона <span className='text-[--pri] '>+7 (495) 000-00-00</span> или оставьте свои координаты и наш
-            менеджер перезвонит вам через 10 минут
+            Задайте их по номеру телефона <span className="text-[--pri] ">+7 (495) 000-00-00</span>{' '}
+            или оставьте свои координаты и наш менеджер перезвонит вам через 10 минут
           </p>
         </div>
         <form

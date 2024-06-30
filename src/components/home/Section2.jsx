@@ -32,6 +32,7 @@ const Section2 = () => {
   };
 
   return (
+    
     <div className="container mb-[82px] md:mb-[120px] lg:mb-[150px]  ">
       <div className=" mb-[25px] lg:mb-[43px]">
         <Title text={'Комплексное оснащение кабинетов'} />

@@ -22,7 +22,7 @@ export const myData = [
     category: "Лабораторное оборудование",
     img: img1,
     price: 300000,
-    isAvailable: true,
+    isAvailable: false,
     element: 213134,
     status: 'Новинка',
     amount: 0,

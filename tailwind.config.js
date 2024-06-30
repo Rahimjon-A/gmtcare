@@ -10,6 +10,9 @@ module.exports = {
   plugins: [
     function ({ addUtilities }) {
       addUtilities({
+        '.custom-title': {
+          '@apply text-[28px] md:text-[34px] lg:text-[48px]': {},
+        },
         '.custom-text': {
           '@apply text-[12px] md:text-[14px] lg:text-[16px]': {},
         },

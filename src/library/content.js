@@ -1,12 +1,20 @@
-import news1 from "../../public/news1.png"
-import news2 from "../../public/news2.png"
-import news3 from "../../public/news3.png"
-import brend1 from "../../public/brend1.png"
-import brend2 from "../../public/brend2.png"
-import brend3 from "../../public/brend3.png"
-import kobinet1 from "../../public/kobinet1.png"
-import kobinet2 from "../../public/kobinet2.png"
-import kobinet3 from "../../public/kobinet3.png"
+import news1 from '../../public/news1.png';
+import news2 from '../../public/news2.png';
+import news3 from '../../public/news3.png';
+import brend1 from '../../public/brend1.png';
+import brend2 from '../../public/brend2.png';
+import brend3 from '../../public/brend3.png';
+import kobinet1 from '../../public/kobinet1.png';
+import kobinet2 from '../../public/kobinet2.png';
+import kobinet3 from '../../public/kobinet3.png';
+import service1 from '../../public/services1.png';
+import service2 from '../../public/services2.png';
+import service3 from '../../public/services3.png';
+import service5 from '../../public/services5.png';
+import service6 from '../../public/services6.png';
+import service7 from '../../public/services7.png';
+import service8 from '../../public/services8.png';
+import service9 from '../../public/services9.png';
 
 export const kibinet = [
   {
@@ -41,7 +49,66 @@ export const kibinet = [
   },
 ];
 
-export  const menuItems = [
+export const services = [
+  {
+    id: 'ser1',
+    title: 'Апробация',
+    img: service1,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser2',
+    title: 'Помощь инженеров в настройке',
+    img: service2,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser3',
+    title: 'Обучение работе с оборудованием',
+    img: service3,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser4',
+    title: 'Работа с учебными центрами повышения квалификации медицинского персонала',
+    img: service5,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser5',
+    title: 'Помощь в подборе оборудования',
+    img: service6,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser6',
+    title: 'Пуско-наладочные работы',
+    img: service7,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser7',
+    title: 'Подменный аппарат',
+    img: service8,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+  {
+    id: 'ser8',
+    title: 'Организация обучения врачей на собственной территории',
+    img: service9,
+    content:
+      'Также как постоянное информационно-пропагандистское обеспечение нашей деятельности требует определения и уточнения распределения внутренних резервов и ресурсов. ',  
+  },
+];
+
+export const menuItems = [
   'Реанимация',
   'Хирургия',
   'Офтальмология',
@@ -80,22 +147,22 @@ export const news = [
     id: 1,
     img: news1,
     title: 'Название новости',
-    date: "07.11.2022",
-    content: "Допускает внедрение поэтапного и развития общества."
+    date: '07.11.2022',
+    content: 'Допускает внедрение поэтапного и развития общества.',
   },
   {
     id: 2,
     img: news2,
     title: 'Название новости',
-    date: "07.11.2022",
-    content: "Допускает внедрение поэтапного и развития общества."
+    date: '07.11.2022',
+    content: 'Допускает внедрение поэтапного и развития общества.',
   },
   {
     id: 3,
     img: news3,
     title: 'Название новости',
-    date: "07.11.2022",
-    content: "Допускает внедрение поэтапного и развития общества."
+    date: '07.11.2022',
+    content: 'Допускает внедрение поэтапного и развития общества.',
   },
 ];
 
