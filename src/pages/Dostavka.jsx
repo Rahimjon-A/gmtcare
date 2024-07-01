@@ -9,6 +9,8 @@ import star from '../../public/star.svg';
 import Title from '../ui/Title';
 import { BtnG } from '../ui/Btn';
 import Accordion from '../ui/ExtraAccordion';
+import { Link } from 'react-router-dom';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const Dostavka = () => {
   const [formData, setFormData] = useState({
@@ -35,8 +37,21 @@ const Dostavka = () => {
   };
 
   return (
-    <div className="mt-[100px] ">
-      <div className=" container custom-margin">
+    <>
+      <div className=" container flex pt-[20px] gap-2 custom-text ">
+        <Link to={'/'}>
+          <span className="text-[--text] cursor-pointer  flex items-center gap-2 ">
+            Главная <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
+          </span>
+        </Link>
+        <Link>
+          <span className="text-[--second] font-medium cursor-pointer  flex items-center gap-2 ">
+            О компании
+          </span>
+        </Link>
+      </div>
+
+      <div className=" container custom-margin mt-[40px] md:mt-[50px] lg:mt-[100px] ">
         <p className="text-[28px] md:text-[34px] lg:text-[48px] font-medium leading-[110%] text-[--second] mb-[30px] lg:mb-[40px] ">
           Информация о доставке
         </p>
@@ -102,7 +117,7 @@ const Dostavka = () => {
       </div>
 
       <div className=" container custom-margin grid grid-cols-1 lg:grid-cols-2 ">
-        <div >
+        <div>
           <span className=" block w-[70%] md:w-[100%] lg:w-[70%] xl:w-[60%] ">
             <Title text={`Правила получения товара  в пункте выдачи`} />
           </span>
@@ -142,21 +157,24 @@ const Dostavka = () => {
 
       <CustomizedAccordions />
 
-      <div className=' container grid grid-cols-2 custom-margin'>
-        <div className=' order-1'>
-          <p className='text-[--second] font-medium leading-[120%] text-[18px] md:text-[20px] xl:text-[30px] pb-[25px] md:pb-[30px] lg:pb-0  '>Вы сможете забрать оборудование <br /> <span className='text-[--pri] '>самостоятельно</span> из нашего офиса </p>
+      <div className=" container grid grid-cols-2 custom-margin">
+        <div className=" order-1">
+          <p className="text-[--second] font-medium leading-[120%] text-[18px] md:text-[20px] xl:text-[30px] pb-[25px] md:pb-[30px] lg:pb-0  ">
+            Вы сможете забрать оборудование <br />{' '}
+            <span className="text-[--pri] ">самостоятельно</span> из нашего офиса{' '}
+          </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 mb-[10px] gap-[10px] col-span-2 lg:col-span-1 order-2 lg:order-1  '>
-          <div className='border border-[--border] rounded-[10px] p-[25px]  bg-white '>
-              <p className='mb-[15px] text-[16px] lg:text-[18px] font-semibold '>Контакты</p>
-              <p className=' custom-text text-[--text] font-medium mb-1 '>+7 (000) 000-00-00</p>
-              <p className=' custom-text text-[--text] font-medium '>info@mail.ru</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-[10px] gap-[10px] col-span-2 lg:col-span-1 order-2 lg:order-1  ">
+          <div className="border border-[--border] rounded-[10px] p-[25px]  bg-white ">
+            <p className="mb-[15px] text-[16px] lg:text-[18px] font-semibold ">Контакты</p>
+            <p className=" custom-text text-[--text] font-medium mb-1 ">+7 (000) 000-00-00</p>
+            <p className=" custom-text text-[--text] font-medium ">info@mail.ru</p>
           </div>
-          <div className='border border-[--border] rounded-[10px] p-[25px]  bg-white '>
-              <p className='mb-[15px] text-[16px] lg:text-[18px] font-semibold '>Режим работы</p>
-              <p className=' custom-text text-[--text] font-medium mb-1 '>пн-пт: 09:00-19:00</p>
-              <p className=' custom-text text-[--text] font-medium '>сб-вс: выходной</p>
+          <div className="border border-[--border] rounded-[10px] p-[25px]  bg-white ">
+            <p className="mb-[15px] text-[16px] lg:text-[18px] font-semibold ">Режим работы</p>
+            <p className=" custom-text text-[--text] font-medium mb-1 ">пн-пт: 09:00-19:00</p>
+            <p className=" custom-text text-[--text] font-medium ">сб-вс: выходной</p>
           </div>
         </div>
 
@@ -246,7 +264,7 @@ const Dostavka = () => {
 
       <Mail />
       <Footer />
-    </div>
+    </>
   );
 };
 

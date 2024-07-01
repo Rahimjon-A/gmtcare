@@ -1,6 +1,6 @@
 import aboutMonitor from '../../public/aboutMonitor.png';
 import aboutImg from '../../public/aboutMain.png';
-import dr1 from "../../public/dr1.png";
+import dr1 from '../../public/dr1.png';
 import dr2 from '../../public/dr2.png';
 import dr3 from '../../public/dr3.png';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -12,6 +12,8 @@ import Map from '../components/home/Map';
 import Footer from '../components/home/Footer';
 import Title from '../ui/Title';
 import Customer from '../components/home/Marquee';
+import { Link } from 'react-router-dom';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const About = () => {
   const [mainImg, setMainImg] = useState(1);
@@ -27,8 +29,21 @@ const About = () => {
   };
 
   return (
-    <div className="mt-[40px] ">
-      <div className=" container mb-[60px] md:mb-[120px] lg:mb-[150px] ">
+    <div>
+      <div className=" container flex pt-[20px] gap-2 custom-text ">
+        <Link to={'/'}>
+          <span className="text-[--text] cursor-pointer  flex items-center gap-2 ">
+            Главная <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
+          </span>
+        </Link>
+        <Link>
+          <span className="text-[--second] font-medium cursor-pointer  flex items-center gap-2 ">
+          О компании
+          </span>
+        </Link>
+      </div>
+
+      <div className=" container mb-[60px] md:mb-[120px] lg:mb-[150px] mt-[15px] md:mt-[25px] lg:mt-[40px] ">
         <div className="mb-[25px] lg:mb-10">
           <img src={aboutMonitor} alt="" />
         </div>
@@ -180,11 +195,11 @@ const About = () => {
         </div>
       </div>
 
-      <Customer/>
+      <Customer />
       <Section3 />
       <Brends />
-      <Sertificat/>
-      <Map/>
+      <Sertificat />
+      <Map />
       <Footer />
     </div>
   );

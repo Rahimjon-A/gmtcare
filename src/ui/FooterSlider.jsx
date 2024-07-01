@@ -3,6 +3,7 @@ import { Collapse } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 // import 'antd/dist/antd.css';
 import './customStyles.css';
+import { Link } from 'react-router-dom';
 
 const text = `
   A dog is a type of domesticated animal.
@@ -27,7 +28,7 @@ const items = [
         <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 ">Возврат</li>
         <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 ">FAQ</li>
         <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 ">Лизинг</li>
-        <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 ">Отзывы</li>
+        <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 "><Link>Отзывы</Link> </li>
         <li className="text-[12px] lg:text-[14px] cursor-pointer hover:opacity-50 ">Блог</li>
       </ul>
     ),

@@ -43,7 +43,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to={'/'}
+                to={'/oplata'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 Оплата
@@ -51,7 +51,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to={'/'}
+                to={'/grants'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 Гарантии

@@ -6,10 +6,11 @@ import vk from "../../../public/vk.svg";
 import telgrem from "../../../public/telegram.svg";
 import whatsapp from "../../../public/whatsapp.svg";
 import logo from "../../../public/footer.svg";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
-  return ( 
+  return (     
     <div className="bg-[--pri] ">
       {/* top */}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_3fr_1fr] container gap-[40px] lg:gap-[120px] pt-[15px] sm:pt-[40px] pb-[30px] lg:pb-[47px] ">
@@ -33,7 +34,9 @@ const Footer = () => {
               <li className="text-[12px] lg:text-[14px] ">Возврат</li>
               <li className="text-[12px] lg:text-[14px] ">FAQ</li>
               <li className="text-[12px] lg:text-[14px] ">Лизинг</li>
-              <li className="text-[12px] lg:text-[14px] ">Отзывы</li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={"/comments"} >Отзывы</Link>
+              </li>
               <li className="text-[12px] lg:text-[14px] ">Блог</li>
             </ul>
           </div>

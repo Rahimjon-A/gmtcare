@@ -10,6 +10,9 @@ import About from "./pages/About";
 import Dostavka from "./pages/Dostavka";
 import Services from "./pages/Services";
 import Blog from "./pages/blog/Blog";
+import Oplata from "./pages/Oplata";
+import Grants from "./pages/Grants";
+import Comments from "./components/comments/Comments";
 
 const App = () => {
 
@@ -41,6 +44,18 @@ const App = () => {
         {
           path: "/blog",
           element: <Blog/>
+        },
+        {
+          path: "/oplata",
+          element: <Oplata/>
+        },
+        {
+          path: "/grants",
+          element: <Grants/>
+        },
+        {
+          path: "/comments",
+          element: <Comments/>
         },
         {
           path: "/tovar/:id",
