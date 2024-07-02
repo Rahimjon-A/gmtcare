@@ -17,12 +17,12 @@ const Footer = () => {
         <div className=" hidden sm:block">
           <p className="text-[#F8F7F3] text-[14px] pb-[15px] font-semibold leading-[normal] border-b border-[#F8F7F3] ">
             Покупателям
-          </p>
+          </p>  
           <div className="pt-[15px] text-white flex justify-between ">
             <ul className="flex flex-col gap-2">
-              <li className="text-[12px] lg:text-[14px] ">О компании</li>
-              <li className="text-[12px] lg:text-[14px] ">Сертификаты</li>
-              <li className="text-[12px] lg:text-[14px] ">Вакансии</li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/about"}>О компании</Link> </li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/about/serticats"}>Сертификаты</Link> </li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/about/vacancy"}>Вакансии</Link> </li>
               <li className="text-[12px] lg:text-[14px] ">Гарантии</li>
               <li className="text-[12px] lg:text-[14px] ">Услуги</li>
               <li className="text-[12px] lg:text-[14px] ">Акции</li>

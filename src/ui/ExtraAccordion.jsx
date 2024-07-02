@@ -30,9 +30,9 @@ const Accordion = ({ title, show = true }) => {
           </div>
         </div>
 
-        <div className="border-t border-[--border]">
+        <div className={` ${show ? "border-t border-[--border]" : "" } `}>
           {accordionItems.map((item, index) => (
-            <div key={index} className={` ${show ? "border-b border-[--border]" : ""} `}>
+            <div key={index} className={`border-b border-[--border] `}>
               <div
                 className="flex justify-between items-center cursor-pointer py-[15px] lg:py-[25px]"
                 onClick={() => toggleAccordion(index)}
@@ -54,7 +54,7 @@ const Accordion = ({ title, show = true }) => {
                 classNames="accordion"
                 unmountOnExit
               >
-                <div className="pb-2">
+                <div className="pb-5">
                   <p className="custom-text text-[--text]">
                     Но синтетическое тестирование, в своём классическом представлении, допускает
                     внедрение поэтапного и последовательного развития общества. В рамках

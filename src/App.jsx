@@ -18,6 +18,9 @@ import BlogMain from "./pages/blog/BlogMain";
 import Kobinet from "./pages/Kobinet";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
+import AboutMain from "./pages/about/AboutMain";
+import Vacancy from "./pages/about/Vacancy";
+import Sertificats from "./pages/about/Sertificats";
 
 const App = () => {
 
@@ -36,7 +39,21 @@ const App = () => {
         },
         {
           path: "/about",
-          element: <About/>
+          element: <AboutMain/>,
+          children:  [
+            {
+              path: "/about",
+              element: <About/>
+            },
+            {
+              path: "/about/vacancy",
+              element: <Vacancy/>
+            },
+            {
+              path: "/about/serticats",
+              element: <Sertificats/>
+            },
+          ]
         },
         {
           path: "/dostavka",

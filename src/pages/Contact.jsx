@@ -126,11 +126,9 @@ const Contact = () => {
             height="450"
           ></iframe>
           <span className=" absolute top-[20px] left-[20px] bg-white ">
-            {' '}
             <BtnW title={'г. Москва, ул. Московская, д. 35'} />{' '}
           </span>
           <span className=" absolute bottom-[20px] right-[20px] ">
-            {' '}
             <BtnG title={'Построить маршрут'} />{' '}
           </span>
         </div>

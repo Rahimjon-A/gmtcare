@@ -51,7 +51,7 @@ const Faq = () => {
           </div>
         </div>
 
-        <div>
+        <div className='border-t border-[--border]  '>
           <PaginationComponent
             items={faq}
             itemsPerPage={itemsPerPage}
