@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BtnG } from '../../ui/Btn';
 
-const ContactForm = () => {
+const ContactForm = ({ title = "Остались вопросы?"}) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -27,7 +27,7 @@ const ContactForm = () => {
 
   return (
     <div className=" bg-white p-[40px] border border-[--border] rounded-md">
-      <h2 className=" lg:text-[30px] mb-4">Остались вопросы?</h2>
+      <h2 className=" lg:text-[30px] mb-4"> {title} </h2>
       <p className="mb-6 text-[14px] text-[--text] xl:pr-[150px] ">
         Задайте их по номеру телефона +7 (495) 000-00-00 или оставьте свои координаты и наш менеджер
         перезвонит вам через 10 минут

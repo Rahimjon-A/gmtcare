@@ -13,7 +13,7 @@ export const BtnW = ({title}) => {
   )
 }
 export const BtnWG = ({title}) => {
-  return (
+  return (    
     <button className="text-[12px]   py-2 lg:py-[11px] px-[20px] lg:px-[30px] border border-[--border] text-[--pri] rounded-full font-semibold  hover:border-[#07745E] duration-200  ">
       {title}
     </button>

@@ -22,7 +22,7 @@ const Home = () => {
     <Section4/>
     <Customer/>
     <Brends/>
-    <Accordion/>
+    <Accordion text={"Информация о компании"} />
     <News/>
     <Map/>
     <Mail/>

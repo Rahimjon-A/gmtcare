@@ -4,9 +4,9 @@ import { BtnG } from '../../ui/Btn'
 
 const Mail = () => {
   return (
+    
     <div className='bg-[#e5e4ed] '>
-        <div className='container grid mail justify-center sm:justify-end '>
-            
+        <div className='container grid mail justify-center sm:justify-end '>  
               <div className='pt-[35px]'>
                 <Title text={"Подпишитесь и будьте в курсе!"} />
                 <p className=' text-[--text] font-medium text-[12px] md:text-[14px] lg:text-[16px] pt-[10px] mb-[30px] lg:pt-[20px] lg:mb-[45px] '>Акции, скидки, распродажи ждут!</p>

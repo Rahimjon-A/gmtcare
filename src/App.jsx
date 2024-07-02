@@ -6,13 +6,18 @@ import Home from "./pages/Home";
 import Layout from "./layout/Layout";
 import Catalog from "./pages/Catalog";
 import Tovar from "./pages/Tovar";
-import About from "./pages/About";
+import About from "./pages/about/About";
 import Dostavka from "./pages/Dostavka";
 import Services from "./pages/Services";
 import Blog from "./pages/blog/Blog";
 import Oplata from "./pages/Oplata";
 import Grants from "./pages/Grants";
 import Comments from "./components/comments/Comments";
+import News from "./pages/blog/News";
+import BlogMain from "./pages/blog/BlogMain";
+import Kobinet from "./pages/Kobinet";
+import Contact from "./pages/Contact";
+import Faq from "./pages/Faq";
 
 const App = () => {
 
@@ -42,8 +47,26 @@ const App = () => {
           element: <Services/>
         },
         {
+          path: "/kobinet",
+          element: <Kobinet/>
+        },
+        {
+          path: "/contact",
+          element: <Contact/>
+        },
+        {
           path: "/blog",
-          element: <Blog/>
+          element: <Blog/>,
+          children: [
+            {
+              path: "/blog",
+              element: <BlogMain/>
+            },
+            {
+              path: "/blog/news",
+              element: <News/>
+            },
+          ]
         },
         {
           path: "/oplata",
@@ -56,6 +79,10 @@ const App = () => {
         {
           path: "/comments",
           element: <Comments/>
+        },
+        {
+          path: "/faq",
+          element: <Faq/>
         },
         {
           path: "/tovar/:id",

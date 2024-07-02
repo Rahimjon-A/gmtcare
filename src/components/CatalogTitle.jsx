@@ -4,26 +4,26 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { menuItems } from '../library/content';
 import { VscSettings } from 'react-icons/vsc';
 
-const CatalogTitle = () => {
+const CatalogTitle = ({text = "Популярные категории"}) => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('Направления');
 
   return (
+
     <div className="flex flex-col container md:flex-row md:justify-between md:items-center pt-[10px] ">
-      <div className='lg:hidden'>
-      <Title text={'Популярные категории'} />
+      <div className="lg:hidden">
+        <Title text={text} />
       </div>
-
-
 
       <div
         onClick={() => setShow((prev) => !prev)}
         className={`border md:max-w-[280px] w-full   border-[--border] mt-[20px] mb-2 md:mt-0 md:mb-0  px-[15px] py-3 rounded-[10px] relative flex lg:hidden  justify-center md:justify-between items-center  gap-2 cursor-pointer `}
       >
-
-        <VscSettings className='w-5 h-5' />
+        <VscSettings className="w-5 h-5 md:hidden " />
         <p className="text-[#202020] text-[14px] font-medium leading-[118%]"> {value} </p>
-        <IoIosArrowDown className={`${show ? ' rotate-180' : ' '} w-5 h-5 duration-200 hidden md:block `} />
+        <IoIosArrowDown
+          className={`${show ? ' rotate-180' : ' '} w-5 h-5 duration-200 hidden md:block `}
+        />
 
         <div
           className={` ${

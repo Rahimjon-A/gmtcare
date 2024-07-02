@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import ScrollTop from '../ui/UpToTop';
 
+
 const Layout = () => {
   return (
     <div>

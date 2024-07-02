@@ -49,7 +49,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   backgroundColor: '#088269',
 }));
 
-export default function CustomizedAccordions() {
+export default function CustomizedAccordions({text = "Часто задаваемые вопросы"}) {
   const [expanded, setExpanded] = React.useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -61,14 +61,14 @@ export default function CustomizedAccordions() {
     <div className="bg-[--pri] py-[60px] lg:py-[120px] mb-[60px] md:mb-[120px] lg:mb-[150px] ">
       <div className="container grid grid-cols-1 md:grid-cols-2">
         <div className="text-white">
-          <p className="text-[18px] md:text-[20px] lg:text-[30px] font-medium leading-[120%] text-white mb-[50px] ">Информация о компании</p>
+          <p className="text-[18px] md:text-[20px] lg:text-[30px] font-medium leading-[120%] text-white mb-[50px] ">{text} </p>
         </div>
 
         <div className="border-t">
           <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <Typography>
-                <p className="text-[18px] ">О компании</p>{' '}
+                <p className="text-[18px] ">О компании  </p>{' '}
               </Typography>
             </AccordionSummary>
 

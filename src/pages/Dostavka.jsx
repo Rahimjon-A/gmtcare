@@ -11,6 +11,7 @@ import { BtnG } from '../ui/Btn';
 import Accordion from '../ui/ExtraAccordion';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { accordionItems } from '../library/content';
 
 const Dostavka = () => {
   const [formData, setFormData] = useState({
@@ -191,7 +192,7 @@ const Dostavka = () => {
         </div>
       </div>
 
-      <Accordion />
+      <Accordion items={accordionItems} />
 
       <div className="grid grid-cols-1 gap-[30px] lg:gap-0 lg:grid-cols-2 container custom-margin ">
         <div>

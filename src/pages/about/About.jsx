@@ -5,13 +5,13 @@ import dr2 from '../../public/dr2.png';
 import dr3 from '../../public/dr3.png';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState } from 'react';
-import Sertificat from '../ui/Sertificat';
-import Section3 from '../components/home/Section3';
-import Brends from '../components/home/Brends';
-import Map from '../components/home/Map';
-import Footer from '../components/home/Footer';
-import Title from '../ui/Title';
-import Customer from '../components/home/Marquee';
+import Sertificat from '../../ui/Sertificat';
+import Section3 from '../../components/home/Section3';
+import Brends from '../../components/home/Brends';
+import Map from '../../components/home/Map';
+import Footer from '../../components/home/Footer';
+import Title from '../../ui/Title';
+import Customer from '../../components/home/Marquee';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
@@ -29,6 +29,7 @@ const About = () => {
   };
 
   return (
+    
     <div>
       <div className=" container flex pt-[20px] gap-2 custom-text ">
         <Link to={'/'}>

@@ -191,7 +191,9 @@ const Header = () => {
               Производители
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Кабинеты под ключ
+             <Link to={"kobinet"}>
+             Кабинеты под ключ
+             </Link>
             </li>
             <Link to={"/services"}>
               <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
@@ -205,7 +207,7 @@ const Header = () => {
               Покупателям
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Контакты
+              <Link to={"/contact"}> Контакты</Link>
             </li>
           </ul>
 
