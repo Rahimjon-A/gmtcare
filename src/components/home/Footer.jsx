@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
-  return (   
+  
+  return (  
+
     <div className="bg-[--pri] ">
       {/* top */}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_3fr_1fr] container gap-[40px] lg:gap-[120px] pt-[15px] sm:pt-[40px] pb-[30px] lg:pb-[47px] ">

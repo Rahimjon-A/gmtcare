@@ -192,7 +192,7 @@ const Dostavka = () => {
         </div>
       </div>
 
-      <Accordion items={accordionItems} />
+      <Accordion title={accordionItems} />
 
       <div className="grid grid-cols-1 gap-[30px] lg:gap-0 lg:grid-cols-2 container custom-margin ">
         <div>

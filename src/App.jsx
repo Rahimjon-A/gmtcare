@@ -21,6 +21,7 @@ import Faq from "./pages/Faq";
 import AboutMain from "./pages/about/AboutMain";
 import Vacancy from "./pages/about/Vacancy";
 import Sertificats from "./pages/about/Sertificats";
+import Profile from "./pages/Profile";
 
 const App = () => {
 
@@ -32,6 +33,10 @@ const App = () => {
         {
           path: "/",
           element: <Home/>
+        },
+        {
+          path: "/profile",
+          element: <Profile/>
         },
         {
           path: "/catalog",

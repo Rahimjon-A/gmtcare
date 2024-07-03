@@ -145,12 +145,14 @@ const Header = () => {
           </div>
 
           <div className=" items-center gap-[25px] hidden md:flex ">
-            <div className="flex cursor-pointer group flex-col items-center gap-1 ">
-              <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
-              <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                Войти
-              </span>
-            </div>
+            <Link to={"/profile"}>
+              <div className="flex cursor-pointer group flex-col items-center gap-1 ">
+                <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
+                <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
+                  Войти
+                </span>
+              </div>
+            </Link>
 
             <div className="flex cursor-pointer group flex-col items-center gap-1 ">
               <GoHeart className="text-[20px] group-hover:text-[--pri] duration-200 " />
@@ -191,11 +193,9 @@ const Header = () => {
               Производители
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-             <Link to={"kobinet"}>
-             Кабинеты под ключ
-             </Link>
+              <Link to={'kobinet'}>Кабинеты под ключ</Link>
             </li>
-            <Link to={"/services"}>
+            <Link to={'/services'}>
               <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
                 Услуги
               </li>
@@ -207,7 +207,7 @@ const Header = () => {
               Покупателям
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              <Link to={"/contact"}> Контакты</Link>
+              <Link to={'/contact'}> Контакты</Link>
             </li>
           </ul>
 
