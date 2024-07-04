@@ -10,6 +10,7 @@ import Map from '../components/home/Map';
 
 const Faq = () => {
 
+  
   const itemsPerPage = 10;
 
   const renderAccodion = (currentItems) => (

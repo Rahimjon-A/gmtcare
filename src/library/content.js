@@ -567,3 +567,103 @@ export const arxive = [
     title: 'HR–менеджер',
   },
 ];
+
+
+export const producers = [
+  {
+    id: "pro1",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro2",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro3",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro4",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro5",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro6",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro7",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro8",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro9",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro10",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro11",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro12",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+  {
+    id: "pro13",
+    img: brend1,
+    title: "НМИЦ онкологии им. Н.Н. Блохина"
+  },
+]
+
+export const countries = [
+  {
+    id: "country1",
+    title: "Австралия"
+  },
+  {
+    id: "country2",
+    title: "Австрия"
+  },
+  {
+    id: "country3",
+    title: "Беларусь"
+  },
+  {
+    id: "country4",
+    title: "Бельгия"
+  },
+  {
+    id: "country5",
+    title: "Великобритания"
+  },
+  {
+    id: "country6",
+    title: "Германия"
+  },
+  {
+    id: "country7",
+    title: "Испания"
+  }
+]

@@ -10,9 +10,8 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
-  
   return (  
-
+    
     <div className="bg-[--pri] ">
       {/* top */}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_3fr_1fr] container gap-[40px] lg:gap-[120px] pt-[15px] sm:pt-[40px] pb-[30px] lg:pb-[47px] ">
@@ -25,21 +24,21 @@ const Footer = () => {
               <li className="text-[12px] lg:text-[14px] "><Link to={"/about"}>О компании</Link> </li>
               <li className="text-[12px] lg:text-[14px] "><Link to={"/about/serticats"}>Сертификаты</Link> </li>
               <li className="text-[12px] lg:text-[14px] "><Link to={"/about/vacancy"}>Вакансии</Link> </li>
-              <li className="text-[12px] lg:text-[14px] ">Гарантии</li>
-              <li className="text-[12px] lg:text-[14px] ">Услуги</li>
-              <li className="text-[12px] lg:text-[14px] ">Акции</li>
-              <li className="text-[12px] lg:text-[14px] ">Доставка</li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/grants"}>Гарантии</Link> </li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/services"}>Услуги</Link> </li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/discount"}>Акции</Link></li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/dostavka"}> Доставка</Link></li>
             </ul>
 
             <ul className="flex flex-col gap-2">
-              <li className="text-[12px] lg:text-[14px] ">Оплата</li>
-              <li className="text-[12px] lg:text-[14px] ">Возврат</li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/oplata"}>Оплата</Link></li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/unknown"}>Возврат</Link> </li>
               <li className="text-[12px] lg:text-[14px] "><Link to={"/faq"}>FAQ</Link> </li>
-              <li className="text-[12px] lg:text-[14px] ">Лизинг</li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/unknown"}>Лизинг</Link> </li>
               <li className="text-[12px] lg:text-[14px] ">
-                <Link to={"/comments"} >Отзывы</Link>
+                <Link to={"/about/comments"} >Отзывы</Link>
               </li>
-              <li className="text-[12px] lg:text-[14px] ">Блог</li>
+              <li className="text-[12px] lg:text-[14px] "><Link to={"/blog"}>Блог</Link> </li>
             </ul>
           </div>
         </div>
@@ -72,7 +71,7 @@ const Footer = () => {
               <ul className=" flex flex-col gap-2">
                 <li className="text-[12px] lg:text-[14px] ">Новинки</li>
                 <li className="text-[12px] lg:text-[14px] ">Распродажи</li>
-                <li className="text-[12px] lg:text-[14px] ">Кабинеты под ключ</li>
+                <li className="text-[12px] lg:text-[14px] "> <Link to={"/kobinet"}>Кабинеты под ключ</Link> </li>
                 <li className="text-[12px] lg:text-[14px] ">Скачать каталог</li>
               </ul>
             </ul>

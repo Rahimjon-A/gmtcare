@@ -2,7 +2,6 @@ import React from 'react';
 import ContactForm from './Contact';
 
 const Map = () => {
-  
   return (  
     <div className="container gap-[10px] grid gird-cols-1 md:grid-cols-2 mb-[60px] md:mb-[120px] lg:mb-[150px] ">
       <div  className='w-full border border-[--border] rounded-[10px] '>

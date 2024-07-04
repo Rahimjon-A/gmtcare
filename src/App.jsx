@@ -22,6 +22,12 @@ import AboutMain from "./pages/about/AboutMain";
 import Vacancy from "./pages/about/Vacancy";
 import Sertificats from "./pages/about/Sertificats";
 import Profile from "./pages/Profile";
+import Unknown from "./ui/Unknown";
+import Discount from "./pages/Discount";
+import Producers from "./pages/Producers";
+import Reanimatsiya from "./pages/Reanimatsiya";
+import Korzinka from "./pages/Korzinka";
+import Wishlist from "./pages/Wishlist";
 
 const App = () => {
 
@@ -39,8 +45,20 @@ const App = () => {
           element: <Profile/>
         },
         {
+          path: "/wishlist",
+          element: <Wishlist/>
+        },
+        {
+          path: "/producers",
+          element: <Producers/>
+        },
+        {
           path: "/catalog",
           element: <Catalog/>
+        },
+        {
+          path: "/discount",
+          element: <Discount/>
         },
         {
           path: "/about",
@@ -58,11 +76,19 @@ const App = () => {
               path: "/about/serticats",
               element: <Sertificats/>
             },
+            {
+              path: "/about/comments",
+              element: <Comments/>
+            },
           ]
         },
         {
           path: "/dostavka",
           element: <Dostavka/>
+        },
+        {
+          path: "/korzinka",
+          element: <Korzinka/>
         },
         {
           path: "/services",
@@ -71,6 +97,10 @@ const App = () => {
         {
           path: "/kobinet",
           element: <Kobinet/>
+        },
+        {
+          path: "/kobinet/reanimatsiya",
+          element: <Reanimatsiya/>
         },
         {
           path: "/contact",
@@ -97,10 +127,6 @@ const App = () => {
         {
           path: "/grants",
           element: <Grants/>
-        },
-        {
-          path: "/comments",
-          element: <Comments/>
         },
         {
           path: "/faq",

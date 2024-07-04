@@ -7,6 +7,8 @@ import { GoHeart } from 'react-icons/go';
 import { LuBarChartHorizontalBig } from 'react-icons/lu';
 
 import Slider from 'react-slick';
+import Card from './Card';
+import { Link } from 'react-router-dom';
 
 const Carousel = ({ carousel }) => {
   const sliderRef = useRef(null);
@@ -38,65 +40,14 @@ const Carousel = ({ carousel }) => {
       },
     ],
   };
-  const getStatusStyles = (status) => {
-    switch (status) {
-      case "Новинка":
-        return { backgroundColor: "#E1EFE6", color: "#088269", borderColor: "#088269" };
-      case "Хит продаж":
-        return { backgroundColor: "#E6E6FD", color: "#424285", borderColor: "#424285" };
-      case "-30%":
-        return { backgroundColor: "#FFE095", color: "#AD7B00", borderColor: "#AD7B00" };
-      default:
-        return { backgroundColor: "#FFFFFF", color: "inherit", borderColor: "transparent" };
-    }
-  };
+
 
   return (
     <>
       <div className="relative  ">
         <Slider ref={sliderRef} {...settings}>
           {carousel.map((item) => (
-            <div
-              key={item.id}
-              className="rounded-[10px]  w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "
-            >
-              <div className="bg-white p-[10px] md:p-[30px] lg:p-[50px] relative mb-[15px] lg:mb-[20px]  flex justify-center items-center border-b border-[--border]">
-                <img
-                  src={item.img}
-                  alt="image"
-                  className="w-full h-[172px] md:h-[142px]  lg:h-[229px]"
-                />
-                <span
-                  style={getStatusStyles(item.status)}
-                  className={`absolute top-[15px] left-[15px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] bg-[${status}] py-1 px-[10px] rounded-full`}
-                >
-                  {item.status}
-                </span>
-                <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
-                  <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
-                  <GoHeart className="w-6 h-6 hover:text-[--pri] duration-200 cursor-pointer" />
-                </div>
-              </div>
-
-              <div className="flex flex-col   px-[15px] pb-[10px] lg:pb-[15px]">
-                <div className="flex flex-col   mb-[15px]">
-                  <p className="text-[16px] lg:text-[18px] w-[90%] font-semibold leading-[normal] mb-[10px]">
-                    {item.title}
-                  </p>
-                  <span className="text-[12px] font-normal leading-[normal] text-[--text] mb-1">
-                    Артикул: {item.element}
-                  </span>
-                  <span className="text-[12px] font-normal leading-[normal] text-[--text]">
-                    {item.isAvailable ? 'В наличии' : 'нет в наличии'}
-                  </span>
-                  <p className=" mt-[15px] lg:mt-[30px] text-[16px] lg:text-[18px] font-semibold leading-[normal] text-[--second]">
-                    {item.price} руб.
-                  </p>
-                </div>
-
-                <BtnGG title={'Добавить в корзину'} />
-              </div>
-            </div>
+              <Card key={item.id} item={item} />
           ))}
         </Slider>
       </div>
@@ -120,7 +71,7 @@ const Carousel = ({ carousel }) => {
 
         <div className="flex sm:hidden lg:flex  gap-4">
           <BtnWG title={'Бесплатная консультация'} />
-          <BtnG title={'Все товары'} />
+          <Link to={"/korzinka"} > <BtnG title={'Все товары'} /> </Link>
         </div>
       </div>
     </>

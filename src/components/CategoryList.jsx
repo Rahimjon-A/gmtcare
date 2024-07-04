@@ -3,6 +3,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const CategoryList = () => {
+  
   return (
     <div className="hidden lg:block border border-[--border] p-[15px] rounded-[10px] h-max ">
       <p className="text-[16px] font-medium pb-[15px] mb-[20px] border-b ">Направления</p>

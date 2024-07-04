@@ -14,10 +14,12 @@ import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import Menu from '../ui/Menu';
 import logo from '../../public/Logo.svg';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [cat, setCat] = useState(false);
   const [menu, setMenu] = useState(false);
+  const { cards } = useSelector((state) => state.card);
 
   return (
     <>
@@ -25,13 +27,25 @@ const Header = () => {
       <div className=" hidden md:block border-b py-[10px]">
         <div className=" flex justify-between  container ">
           <ul className="flex items-center gap-[20px] ">
-            <li>
+            <li className="group relative">
               <Link
                 to={'/about'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 О компании
               </Link>
+
+              <ul className=" absolute text-[12px] w-[180px] z-20  flex-col bg-white border border-[--border] rounded-[10px] gap-[5px] py-[10px] px-[12px] hidden group-hover:flex ">
+                <li className=" cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 ">
+                  <Link to={'/about/vacancy'}>Вакансии</Link>
+                </li>
+                <li className=" cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 ">
+                  <Link to={'/about/comments'}>Отзывы</Link>
+                </li>
+                <li className=" cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 ">
+                  <Link to={'/about/serticats'}>Сертификаты</Link>
+                </li>
+              </ul>
             </li>
             <li>
               <Link
@@ -57,13 +71,21 @@ const Header = () => {
                 Гарантии
               </Link>
             </li>
-            <li>
+            <li className=" relative group">
               <Link
                 to={'/blog'}
                 className="text-[12px] text-[--text] hover:text-[--pri] duration-200 font-medium leading-[normal]"
               >
                 Блог
               </Link>
+              <ul className=" absolute text-[12px] w-auto z-20  flex-col bg-white border border-[--border] rounded-[10px] gap-[5px] py-[10px] px-[12px] hidden group-hover:flex ">
+                <li className=" cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 ">
+                  <Link to={'/blog/news'}>Новости</Link>
+                </li>
+                <li className=" cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 ">
+                  Статьи
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -145,7 +167,7 @@ const Header = () => {
           </div>
 
           <div className=" items-center gap-[25px] hidden md:flex ">
-            <Link to={"/profile"}>
+            <Link to={'/profile'}>
               <div className="flex cursor-pointer group flex-col items-center gap-1 ">
                 <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
                 <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
@@ -154,12 +176,14 @@ const Header = () => {
               </div>
             </Link>
 
-            <div className="flex cursor-pointer group flex-col items-center gap-1 ">
-              <GoHeart className="text-[20px] group-hover:text-[--pri] duration-200 " />
-              <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                Избранное
-              </span>
-            </div>
+            <Link to={"/wishlist"}>
+              <div className="flex cursor-pointer group flex-col items-center gap-1 ">
+                <GoHeart className="text-[20px] group-hover:text-[--pri] duration-200 " />
+                <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
+                  Избранное
+                </span>
+              </div>
+            </Link>
 
             <div className="flex cursor-pointer group flex-col items-center gap-1 ">
               <LuBarChartHorizontalBig className="text-[20px] group-hover:text-[--pri] duration-200 rotate-[-90deg] " />
@@ -168,12 +192,19 @@ const Header = () => {
               </span>
             </div>
 
-            <div className="flex cursor-pointer group flex-col items-center gap-1 ">
-              <PiShoppingCartSimple className="text-[20px] group-hover:text-[--pri] duration-200 " />
-              <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                Сравнить
-              </span>
-            </div>
+            <Link to={'/korzinka'}>
+              <div className="flex cursor-pointer group flex-col items-center gap-1 relative ">
+                <PiShoppingCartSimple className="text-[20px] group-hover:text-[--pri] duration-200 " />
+                <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
+                  Корзина
+                </span>
+                {cards.length > 0 && (
+                  <span className="absolute bottom-[30px] right-1 flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+                    {cards.length}
+                  </span>
+                )}
+              </div>
+            </Link>
           </div>
         </div>
         <Menu menu={menu} />
@@ -190,21 +221,16 @@ const Header = () => {
               </li>
             </Link>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Производители
+              <Link to={'/producers'}> Производители</Link>
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
               <Link to={'kobinet'}>Кабинеты под ключ</Link>
             </li>
-            <Link to={'/services'}>
-              <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-                Услуги
-              </li>
-            </Link>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Акции
+              <Link to={'/services'}>Услуги</Link>
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-              Покупателям
+              <Link to={'/discount'}> Акции</Link>
             </li>
             <li className="text-[12px] lg:text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
               <Link to={'/contact'}> Контакты</Link>

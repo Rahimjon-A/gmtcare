@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { myData } from '../library/myData';
+import React, { useEffect, useState } from 'react';
 import { LuBarChartHorizontalBig } from 'react-icons/lu';
-import { GoHeart } from 'react-icons/go';
+import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { IoIosStar } from 'react-icons/io';
 import { BtnG, BtnGG } from '../ui/Btn';
 import { FaMinus } from 'react-icons/fa6';
@@ -10,11 +9,27 @@ import SingleItem2 from './singleItems/SingleItem2';
 import SingleItem3 from './singleItems/SingleItem3';
 import SingleItem4 from './singleItems/SingleItem4';
 import Single5 from './singleItems/Single5';
+import { useParams } from 'react-router-dom';
+import { myData } from '../library/myData';
+import { useDispatch, useSelector } from 'react-redux';
+import { setWishlist } from '../reducers/wish';
+import { decrement, increment, setCards } from '../reducers/card';
 
 const SinglePage = () => {
-  const data = myData.slice(0, 1)[0];
+  const { id } = useParams();
+  const data = myData.find((item) => item.id == id);
   const [tab, setTab] = useState(0);
-  const [selectImg, setSelectImg] = useState(data.img);
+  const [selectImg, setSelectImg] = useState(null);
+  const { wishlist } = useSelector((state) => state.wish);
+  const { cards } = useSelector((state) => state.card);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setSelectImg(data.img);
+  }, [id]);
+
+  const isLiked = wishlist.some((cartItem) => cartItem.id === data.id);
+  const cardItem = cards.find((card) => card.id === data.id);
 
   const getStatusStyles = (status) => {
     switch (status) {
@@ -32,85 +47,105 @@ const SinglePage = () => {
   return (
     <>
       <div className="container mb-[60px] md:mb-[120px] lg:mb-[150px] mt-[30px] ">
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] lg:gap-[60px] mb-[40px] lg:mb-[60px] ">
-          <div className="bg-white p-[100px] lg:h-[509px] overflow-hidden rounded-[10px] border border-[--border] relative ">
-            <img src={selectImg} alt="image" className="w-full h-full object-contain" />
+        {data ? (
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] lg:gap-[60px] mb-[40px] lg:mb-[60px] ">
+            <div className="bg-white p-[100px] lg:h-[509px] overflow-hidden rounded-[10px] border border-[--border] relative ">
+              <img src={selectImg} alt="image" className="w-full h-full object-contain" />
 
-            <div className=" absolute  bottom-6 lg:left-6 left-1/2 lg:translate-x-0 -translate-x-1/2 flex gap-[5px] lg:gap-[15px] ">
-              {data.slider.map((image, index) => (
-                <div
-                  onClick={() => setSelectImg(image)}
-                  key={index}
-                  className="bg-[#FBFBF9] border-[2px] border-[--border] hover:border-[--pri] rounded-[10px] overflow-hidden  w-[50px] h-[50px]  "
-                >
-                  <img src={image} alt="" className=" w-full h-full object-contain " />
-                </div>
-              ))}
-            </div>
+              <div className=" absolute  bottom-6 lg:left-6 left-1/2 lg:translate-x-0 -translate-x-1/2 flex gap-[5px] lg:gap-[15px] ">
+                {data.slider.map((image, index) => (
+                  <div
+                    onClick={() => setSelectImg(image)}
+                    key={index}
+                    className="bg-[#FBFBF9] border-[2px] border-[--border] hover:border-[--pri] rounded-[10px] overflow-hidden  w-[50px] h-[50px]  "
+                  >
+                    <img src={image} alt="" className=" w-full h-full object-contain " />
+                  </div>
+                ))}
+              </div>
 
-            <span
-              style={getStatusStyles(data.status)}
-              className={`absolute top-[25px] left-[25px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] bg-[${status}] py-1 px-[10px] rounded-full`}
-            >
-              {data.status}
-            </span>
-
-            <div className="flex items-center gap-[10px] absolute top-[27px] right-[25px]">
-              <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
-              <GoHeart className="w-6 h-6 hover:text-[--pri] duration-200 cursor-pointer" />
-            </div>
-          </div>
-
-          <div className="pt-[26px] ">
-            <p className="text-[#202020] mb-[10px] text-[30px] font-medium leading-[120%]">
-              {data.title}{' '}
-            </p>
-            <span className="flex items-center gap-3 mb-[15px] ">
-              <span className="flex">
-                <IoIosStar className="text-yellow-500"></IoIosStar>
-                <IoIosStar className="text-yellow-500"></IoIosStar>
-                <IoIosStar className="text-yellow-500"></IoIosStar>
-                <IoIosStar className="text-yellow-500"></IoIosStar>
-                <IoIosStar className="text-slate-300"></IoIosStar>
+              <span
+                style={getStatusStyles(data.status)}
+                className={`absolute top-[25px] left-[25px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] py-1 px-[10px] rounded-full`}
+              >
+                {data.status}
               </span>
-              <span>4.0</span>
-            </span>
-            <span className="flex flex-col gap-1 mb-[15px] ">
-              <p className="text-[12px] text-[--text] ">Категория: {data.category} </p>
-              <p className="text-[12px] text-[--text] ">Производитель: Lorem </p>
-              <p className="text-[12px] text-[--text] ">Артикул: {data.element} </p>
-              <p className="text-[12px] text-[--text] ">
-                {data.isAvailable ? 'В наличии' : 'нет в наличии'}
-              </p>
-            </span>
-            <p className="text-[18px] font-semibold text-[--second] mb-[20px] ">
-              {data.price} руб.{' '}
-            </p>
-            <div className="flex flex-col sm:flex-row  gap-[10px] pb-[25px] border-b-[2px] ">
-              <div className="flex justify-center max-w-[300px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
-                <FaMinus className="hover:text-[--pri] cursor-pointer " />
-                <span className="text-[16px] font-semibold text-[--pri]  "> {data.amount} </span>
-                <button className="text-[20px] font-semibold hover:text-[--pri] cursor-pointer focus:text-[--pri] ">
-                  +
-                </button>
-              </div>
-              <div className="flex gap-[10px] ">
-                <BtnGG title={'Задать вопрос'} />
-                <BtnG title={'Добавить в корзину'} />
+
+              <div className="flex items-center gap-[10px] absolute top-[27px] right-[25px]">
+                <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
+                <div onClick={() => dispatch(setWishlist(data))}>
+                  {isLiked ? (
+                    <GoHeartFill className="w-6 h-6 text-[--pri] duration-200 cursor-pointer" />
+                  ) : (
+                    <GoHeart className="w-6 h-6 hover:text-[--pri] duration-200 cursor-pointer" />
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className="mt-[13px] ">
-              <p className="text-[16px] font-semibold text-[--second] mb-[15px] ">О товаре</p>
-              <p className="text-[12px] w-[60%] lg:w-full font-medium opacity-80  ">
-                Но синтетическое тестирование, в своём классическом представлении, допускает
-                внедрение поэтапного и последовательного развития общества. В рамках спецификации
-                современных стандартов, сторонники тоталитаризма в науке будут функционально
-                разнесены.
+            <div className="pt-[26px] ">
+              <p className="text-[#202020] mb-[10px] text-[30px] font-medium leading-[120%]">
+                {data.title}
               </p>
+              <span className="flex items-center gap-3 mb-[15px] ">
+                <span className="flex">
+                  <IoIosStar className="text-yellow-500"></IoIosStar>
+                  <IoIosStar className="text-yellow-500"></IoIosStar>
+                  <IoIosStar className="text-yellow-500"></IoIosStar>
+                  <IoIosStar className="text-yellow-500"></IoIosStar>
+                  <IoIosStar className="text-slate-300"></IoIosStar>
+                </span>
+                <span>4.0</span>
+              </span>
+              <span className="flex flex-col gap-1 mb-[15px] ">
+                <p className="text-[12px] text-[--text] ">Категория: {data.category} </p>
+                <p className="text-[12px] text-[--text] ">Производитель: Lorem </p>
+                <p className="text-[12px] text-[--text] ">Артикул: {data.element} </p>
+                <p className="text-[12px] text-[--text] ">
+                  {data.isAvailable ? 'В наличии' : 'нет в наличии'}
+                </p>
+              </span>
+              <p className="text-[18px] font-semibold text-[--second] mb-[20px] ">
+                {data.price} руб.
+              </p>
+              <div className="flex flex-col sm:flex-row  gap-[10px] pb-[25px] border-b-[2px] ">
+                <div className="flex justify-center max-w-[300px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
+                  <FaMinus
+                    onClick={() => dispatch(decrement(data.id))}
+                    className="hover:text-[--pri] cursor-pointer "
+                  />
+                  <span className="text-[16px] font-semibold text-[--pri]  ">
+                    {cardItem ? cardItem.amount : 0}
+                  </span>
+                  <button
+                    onClick={() => dispatch(increment(data.id))}
+                    className="text-[20px] font-semibold hover:text-[--pri] cursor-pointer focus:text-[--pri] "
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="flex gap-[10px] ">
+                  <BtnGG title={'Задать вопрос'} />
+                  <span
+                    onClick={() => dispatch(setCards({ ...data, amount: cardItem ? cardItem.amount + 1 : 1 }))}
+                  >
+                    <BtnG title={'Добавить в корзину'} />
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-[13px] ">
+                <p className="text-[16px] font-semibold text-[--second] mb-[15px] ">О товаре</p>
+                <p className="text-[12px] w-[60%] lg:w-full font-medium opacity-80  ">
+                  Но синтетическое тестирование, в своём классическом представлении, допускает
+                  внедрение поэтапного и последовательного развития общества. В рамках спецификации
+                  современных стандартов, сторонники тоталитаризма в науке будут функционально
+                  разнесены.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
 
         <div className="hidden md:block border border-[--border] rounded-[10px] ">
           <ul className="flex gap-[15px] lg:gap-[25px]  items-center text-[12px] lg:text-[14px] font-semibold px-[25px] text-[--text] border-b ">
@@ -181,12 +216,12 @@ const SinglePage = () => {
           </ul>
         </div>
 
-        <div className='flex flex-col gap-4 md:hidden '>
-        <SingleItem />
-        <SingleItem2 />
-        <SingleItem3 />
-        <SingleItem4 />
-        <Single5 />
+        <div className="flex flex-col gap-4 md:hidden ">
+          <SingleItem />
+          <SingleItem2 />
+          <SingleItem3 />
+          <SingleItem4 />
+          <Single5 />
         </div>
       </div>
     </>

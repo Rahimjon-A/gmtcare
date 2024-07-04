@@ -8,6 +8,7 @@ import Section4 from "../components/home/Section4"
 
 
 const Tovar = () => {
+  
   return (
     <>
     <SinglePage/>

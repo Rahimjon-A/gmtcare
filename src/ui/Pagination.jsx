@@ -3,6 +3,7 @@ import { Pagination, Stack } from '@mui/material';
 
 const PaginationComponent = ({ items, itemsPerPage, renderItems }) => {
   
+  
   const [page, setPage] = useState(1);
 
   // Calculate the start and end indices for the current page
