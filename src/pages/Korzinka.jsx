@@ -8,17 +8,17 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BtnG, BtnW } from '../ui/Btn';
-import { setWishlist } from '../reducers/wish';
+import { addCompare, setWishlist } from '../reducers/wish';
 import { decrement, increment, handleRemove, handlePrice } from '../reducers/card';
 
 const Korzinka = () => {
   const { cards, totalPrice } = useSelector((state) => state.card);
-  const { wishlist } = useSelector((state) => state.wish);
+  const { wishlist, compare } = useSelector((state) => state.wish);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(handlePrice())
-}, [cards] )
+  useEffect(() => {
+    dispatch(handlePrice());
+  }, [cards]);
 
   const getStatusStyles = (status) => {
     switch (status) {
@@ -53,7 +53,8 @@ const Korzinka = () => {
           <div className="flex flex-col gap-[10px] ">
             {cards.map((card) => {
               const isLiked = wishlist.some((cartItem) => cartItem.id === card.id);
-              const itemTotal = (card.amount * card.price)
+              const isCompared = compare.some((cartItem) => cartItem.id === card.id);
+              const itemTotal = card.amount * card.price;
               return (
                 <div
                   key={card.id}
@@ -131,7 +132,10 @@ const Korzinka = () => {
                         <GoHeart className="w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200" />
                       )}
                     </span>
-                    <LuBarChartHorizontalBig className="rotate-[-90deg] w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200" />
+                    <LuBarChartHorizontalBig
+                      onClick={() => dispatch(addCompare(card))}
+                      className={`${isCompared ? "text-[--pri] " : "text-[--second] "} rotate-[-90deg] w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 `}
+                    />
                     <IoCloseSharp
                       onClick={() => dispatch(handleRemove(card.id))}
                       className="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200"

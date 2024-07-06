@@ -5,10 +5,13 @@ import ScrollTop from '../ui/UpToTop';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { clearWarning } from '../reducers/card';
+import ModalCase from '../components/modals/ModalCase';
+import Auth from '../components/modals/Auth';
 
 const Layout = () => {
   const { warning } = useSelector((state) => state.card);
   const dispatch = useDispatch();
+ 
   useEffect(() => {
     if (warning) {
       const timer = setTimeout(() => {
@@ -22,17 +25,16 @@ const Layout = () => {
     <div>
       {warning && (
         <div className=" z-50 w-[380px] fixed bg-[--pri] text-center rounded-lg font-semibold p-1 text-[16px] right-1/2 translate-x-1/2 duration-300 top-[5%] text-white transition-all ">
-          <span className="block">Item has been added to your cart. Want more ?</span>
+          <span className="block">Товар добавлен в корзину. Хочу больше ?</span>
           <Link
             to={'/korzinka'}
             onClick={() => dispatch(handleActive(1))}
-            className="text-[--second] underline "
+            className="text-[--border] underline "
           >
-            Go to Shopping Cart
+           Перейти в корзину
           </Link>
         </div>
       )}
-
       <Header />
       <Outlet />
       <ScrollTop />

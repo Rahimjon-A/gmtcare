@@ -25,6 +25,9 @@ module.exports = {
         '.custom-margin': {
           '@apply mb-[60px] md:mb-[120px] lg:mb-[150px]': {},
         },
+        '.btnG': {
+          '@apply text-[12px] bg-[--pri] text-white py-2 lg:py-[11px] px-[20px] lg:px-[30px] rounded-full font-semibold lg:text-[14px] hover:bg-[#07745E] duration-200': {},
+        },
       })
     },
   ],

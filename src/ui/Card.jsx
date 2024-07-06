@@ -4,14 +4,13 @@ import { LuBarChartHorizontalBig } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCards } from '../reducers/card';
-import { setWishlist } from '../reducers/wish';
+import { addCompare, setWishlist } from '../reducers/wish';
 
 const Card = ({ item }) => {
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {wishlist} = useSelector(state => state.wish)
+  const { wishlist, compare } = useSelector((state) => state.wish);
 
   const handleCartClick = (e, item) => {
     e.stopPropagation();
@@ -21,9 +20,15 @@ const Card = ({ item }) => {
   const handleLikeClick = (e, item) => {
     e.stopPropagation();
     dispatch(setWishlist(item));
-};
+  };
+
+  const handleCompare = (e, item) => {
+    e.stopPropagation();
+    dispatch(addCompare(item));
+  };
 
   const isLiked = wishlist.some((cartItem) => cartItem.id === item.id);
+  const isCompared = compare.some((cartItem) => cartItem.id === item.id);
 
   const getStatusStyles = (status) => {
     switch (status) {
@@ -44,7 +49,11 @@ const Card = ({ item }) => {
       className="rounded-[10px]  w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "
     >
       <div className="bg-white p-[10px] md:p-[30px] lg:p-[50px] relative mb-[15px] lg:mb-[20px]  flex justify-center items-center border-b border-[--border]">
-        <img src={item.img} alt="image" className="w-full object-contain h-[172px] md:h-[142px]  lg:h-[229px]" />
+        <img
+          src={item.img}
+          alt="image"
+          className="w-full object-contain h-[172px] md:h-[142px]  lg:h-[229px]"
+        />
         <span
           style={getStatusStyles(item.status)}
           className={`absolute top-[15px] left-[15px] text-[--pri] text-[12px] lg:text-[14px] font-semibold leading-[normal] border border-[--pri] py-1 px-[10px] rounded-full`}
@@ -52,9 +61,9 @@ const Card = ({ item }) => {
           {item.status}
         </span>
         <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
-          <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
+          <LuBarChartHorizontalBig onClick={(e)=> handleCompare(e, item)} className={` ${ isCompared ? "text-[--pri] " : "text-[--second] "} w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`} />
 
-          <div onClick={(e)=> handleLikeClick(e, item)}>
+          <div onClick={(e) => handleLikeClick(e, item)}>
             {isLiked ? (
               <GoHeartFill className="w-6 h-6 text-[--pri] duration-200 cursor-pointer" />
             ) : (

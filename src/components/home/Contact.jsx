@@ -16,7 +16,6 @@ const ContactForm = ({ title = "Остались вопросы?"}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
     setFormData({
       name: '',
       phone: '',

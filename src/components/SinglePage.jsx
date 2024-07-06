@@ -12,7 +12,7 @@ import Single5 from './singleItems/Single5';
 import { useParams } from 'react-router-dom';
 import { myData } from '../library/myData';
 import { useDispatch, useSelector } from 'react-redux';
-import { setWishlist } from '../reducers/wish';
+import { addCompare, setWishlist } from '../reducers/wish';
 import { decrement, increment, setCards } from '../reducers/card';
 
 const SinglePage = () => {
@@ -20,7 +20,7 @@ const SinglePage = () => {
   const data = myData.find((item) => item.id == id);
   const [tab, setTab] = useState(0);
   const [selectImg, setSelectImg] = useState(null);
-  const { wishlist } = useSelector((state) => state.wish);
+  const { wishlist, compare } = useSelector((state) => state.wish);
   const { cards } = useSelector((state) => state.card);
   const dispatch = useDispatch();
 
@@ -29,6 +29,7 @@ const SinglePage = () => {
   }, [id]);
 
   const isLiked = wishlist.some((cartItem) => cartItem.id === data.id);
+  const isCompared = compare.some((cartItem) => cartItem.id === data.id);
   const cardItem = cards.find((card) => card.id === data.id);
 
   const getStatusStyles = (status) => {
@@ -72,7 +73,12 @@ const SinglePage = () => {
               </span>
 
               <div className="flex items-center gap-[10px] absolute top-[27px] right-[25px]">
-                <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
+                <LuBarChartHorizontalBig
+                  onClick={() => dispatch(addCompare(data))}
+                  className={` ${
+                    isCompared ? 'text-[--pri] ' : 'text-[--second] '
+                  } w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`}
+                />
                 <div onClick={() => dispatch(setWishlist(data))}>
                   {isLiked ? (
                     <GoHeartFill className="w-6 h-6 text-[--pri] duration-200 cursor-pointer" />
@@ -109,25 +115,29 @@ const SinglePage = () => {
                 {data.price} руб.
               </p>
               <div className="flex flex-col sm:flex-row  gap-[10px] pb-[25px] border-b-[2px] ">
-                <div className="flex justify-center max-w-[300px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
-                  <FaMinus
-                    onClick={() => dispatch(decrement(data.id))}
-                    className="hover:text-[--pri] cursor-pointer "
-                  />
-                  <span className="text-[16px] font-semibold text-[--pri]  ">
-                    {cardItem ? cardItem.amount : 0}
-                  </span>
-                  <button
-                    onClick={() => dispatch(increment(data.id))}
-                    className="text-[20px] font-semibold hover:text-[--pri] cursor-pointer focus:text-[--pri] "
-                  >
-                    +
-                  </button>
-                </div>
+                {cardItem ? (
+                  <div className="flex justify-center max-w-[300px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
+                    <FaMinus
+                      onClick={() => dispatch(decrement(data.id))}
+                      className="hover:text-[--pri] cursor-pointer "
+                    />
+                    <span className="text-[16px] font-semibold text-[--pri]  ">
+                      {cardItem ? cardItem.amount : 0}
+                    </span>
+                    <button
+                      onClick={() => dispatch(increment(data.id))}
+                      className="text-[20px] font-semibold hover:text-[--pri] cursor-pointer focus:text-[--pri] "
+                    >
+                      +
+                    </button>
+                  </div>
+                ) : null}
                 <div className="flex gap-[10px] ">
                   <BtnGG title={'Задать вопрос'} />
                   <span
-                    onClick={() => dispatch(setCards({ ...data, amount: cardItem ? cardItem.amount + 1 : 1 }))}
+                    onClick={() =>
+                      dispatch(setCards({ ...data, amount: cardItem ? cardItem.amount + 1 : 1 }))
+                    }
                   >
                     <BtnG title={'Добавить в корзину'} />
                   </span>

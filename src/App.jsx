@@ -22,12 +22,12 @@ import AboutMain from "./pages/about/AboutMain";
 import Vacancy from "./pages/about/Vacancy";
 import Sertificats from "./pages/about/Sertificats";
 import Profile from "./pages/Profile";
-import Unknown from "./ui/Unknown";
 import Discount from "./pages/Discount";
 import Producers from "./pages/Producers";
 import Reanimatsiya from "./pages/Reanimatsiya";
 import Korzinka from "./pages/Korzinka";
 import Wishlist from "./pages/Wishlist";
+import Compare from "./pages/Compare";
 
 const App = () => {
 
@@ -47,6 +47,10 @@ const App = () => {
         {
           path: "/wishlist",
           element: <Wishlist/>
+        },
+        {
+          path: "/compare",
+          element: <Compare/>
         },
         {
           path: "/producers",

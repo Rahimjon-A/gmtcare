@@ -4,8 +4,7 @@ const initialState = {
   items: [],
   modal: false,
   active: 0,
-  cards: [],
-  // wishlist: [],
+  cards: JSON.parse(localStorage.getItem("cards")) ||[],
   warning: false,
   totalPrice: 0,
   isAuth: false,
@@ -46,6 +45,7 @@ export const cardSlice = createSlice({
 
     handleRemove: (state, action) => {
       state.cards = state.cards.filter((item) => item.id !== action.payload);
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
 
     setCards: (state, action) => {
@@ -56,18 +56,22 @@ export const cardSlice = createSlice({
       } else {
         state.warning = true;
       }
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
+
     increment: (state, action) => {
       const item = state.cards.find((card) => card.id === action.payload);
       if (item) {
         item.amount += 1;
       }
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
     decrement: (state, action) => {
       const item = state.cards.find((card) => card.id === action.payload);
-      if (item && item.amount > 0) {
+      if (item && item.amount > 1) {
         item.amount -= 1;
       }
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
 
     handlePrice: (state) => {
@@ -75,10 +79,12 @@ export const cardSlice = createSlice({
         (subtotal, item) => subtotal + item.amount * item.price,
         0
       );
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
 
     handleReset: (state) => {
-      state.carts = [];
+      state.cards = [];
+      localStorage.setItem("cards", JSON.stringify(state.cards));
     },
   },
 });

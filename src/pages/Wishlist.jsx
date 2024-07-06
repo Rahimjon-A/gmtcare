@@ -5,13 +5,13 @@ import { BtnG, BtnGG, BtnWG } from '../ui/Btn';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { GrAppsRounded } from 'react-icons/gr';
 import { useDispatch, useSelector } from 'react-redux';
-import { setWishlist } from '../reducers/wish';
+import { addCompare, setWishlist } from '../reducers/wish';
 import { setCards } from '../reducers/card';
 import { LuBarChartHorizontalBig } from 'react-icons/lu';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 
 const Wishlist = () => {
-  const { wishlist } = useSelector((state) => state.wish);
+  const { wishlist, compare } = useSelector((state) => state.wish);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -23,6 +23,11 @@ const Wishlist = () => {
   const handleLikeClick = (e, item) => {
     e.stopPropagation();
     dispatch(setWishlist(item));
+  };
+
+  const handleCompare = (e, item) => {
+    e.stopPropagation();
+    dispatch(addCompare(item));
   };
 
   const getStatusStyles = (status) => {
@@ -80,8 +85,9 @@ const Wishlist = () => {
               <div className="flex justify-between px-[20px] py-3 border border-[--border] rounded-[10px] mb-[10px] ">
                 <select className="bg-transparent outline-none custom-text ">
                   <option value="">По популярности</option>
-                  <option value="">По популярности</option>
-                  <option value="">По популярности</option>
+                  <option value="">По цене</option>
+                  <option value="">По наименованию</option>
+                  <option value="">По новинкам</option>
                 </select>
 
                 <div className="flex gap-[10px] items-center ">
@@ -90,9 +96,11 @@ const Wishlist = () => {
                 </div>
               </div>
 
+
               <div className="grid grid-cols-2 md:grid-cols-3 gap-[10px] ">
                 {wishlist.map((item) => {
                   const isLiked = wishlist.some((cartItem) => cartItem.id === item.id);
+                  const isCompared = compare.some((cartItem) => cartItem.id === item.id);
                   return (
                     <div
                       onClick={() => navigate(`/tovar/${item.id}`)}
@@ -111,7 +119,7 @@ const Wishlist = () => {
                           {item.status}
                         </span>
                         <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
-                          <LuBarChartHorizontalBig className="w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer" />
+                          <LuBarChartHorizontalBig onClick={(e)=> handleCompare(e, item)} className={` ${isCompared ? "text-[--pri]" : "text-[--second] "} w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`} />
 
                           <div onClick={(e) => handleLikeClick(e, item)}>
                             {isLiked ? (
