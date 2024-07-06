@@ -5,6 +5,7 @@ import { hideModal, register } from '../../reducers/gmt';
 import { IoCloseSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
+
 const Auth = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');

@@ -101,7 +101,7 @@ const Header = () => {
           </div>
 
           <div className=" items-center gap-[25px] hidden md:flex ">
-            {user && user.length > 0 ? (
+            {user ? (
               <Link to={`/profile`}>
                 <div className="flex cursor-pointer group flex-col items-center gap-1 ">
                   <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />

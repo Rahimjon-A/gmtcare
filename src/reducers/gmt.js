@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: JSON.parse(localStorage.getItem('user')) || [],
-  personal: JSON.parse(localStorage.getItem('personal')) || {}, // Initial state for personal info
+  user: JSON.parse(localStorage.getItem('user')) || null,
+  personal: JSON.parse(localStorage.getItem('personal')) || {}, 
+  dannie: JSON.parse(localStorage.getItem('dannie')) || {}, 
+  phone: localStorage.getItem('phone') || '',
   active: 0,
 };
 
@@ -19,20 +21,29 @@ export const gmtSlice = createSlice({
     hideModal: (state, action) => {
       state[action.payload] = false;
     },
-    login: (state, action) => {
+    register: (state, action) => {
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(state.user));
+    },
+    updateUser: (state, action) => {
+      state.user = { ...state.user, ...action.payload };
+      localStorage.setItem('user', JSON.stringify(state.user));
     },
     logout: (state) => {
-      state.user = [];
-      localStorage.setItem('user', JSON.stringify(state.user));
-    },
-    register: (state, action) => {
-      state.user.push(action.payload);
-      localStorage.setItem('user', JSON.stringify(state.user));
+      state.user = null;
+      localStorage.removeItem('user');
     },
     saveOrUpdatePersonalInfo: (state, action) => {
       state.personal = { ...state.personal, ...action.payload };
       localStorage.setItem('personal', JSON.stringify(state.personal));
+    },
+    saveOrUpdateDannie: (state, action) => {
+      state.dannie = { ...state.dannie, ...action.payload };
+      localStorage.setItem('dannie', JSON.stringify(state.dannie));
+    },
+    savePhoneNumber: (state, action) => {
+      state.phone = action.payload;
+      localStorage.setItem('phone', action.payload);
     },
   },
 });
@@ -41,10 +52,12 @@ export const {
   handleActive,
   hideModal,
   showModal,
-  login,
+  updateUser,
   logout,
   register,
   saveOrUpdatePersonalInfo,
+  saveOrUpdateDannie,
+  savePhoneNumber
 } = gmtSlice.actions;
 
 export default gmtSlice.reducer;

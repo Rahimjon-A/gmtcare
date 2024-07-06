@@ -6,16 +6,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BtnW } from '../ui/Btn';
 import ProfileImg from './modals/ProfileImg';
 import PersonalInfo from './modals/PersonalInfo';
-import { showModal } from '../reducers/gmt';
+import { hideModal, saveOrUpdatePersonalInfo, showModal } from '../reducers/gmt';
 import EditEmial from './modals/EditEmail';
+import AddPhone from './modals/AddPhone';
 
 const ProfileHeader = () => {
-  const { user, personal } = useSelector((state) => state.gmt);
-  const email = user[0].email || '';
-  const firstLetter = email.charAt(0).toUpperCase();
+  const { user, personal, phone } = useSelector((state) => state.gmt);
+  const firstLetter = user.email.charAt(0).toUpperCase();
   const [isActive, setIsActive] = useState(false);
-  
+
   const dispatch = useDispatch();
+
+  const [personalData, setPersonal] = useState({
+    firstname: '',
+    lastname: '',
+    vk: '',
+    instagram: '',
+    facebook: '',
+    odno: '',
+    twitter: '',
+    phone: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setPersonal({ ...personalData, [id]: value });
+  };
+
+  const handleInfo = (e) => {
+    e.preventDefault();
+    dispatch(saveOrUpdatePersonalInfo(personalData));
+    dispatch(hideModal('personalInfo'));
+  };
+  
   return (
     <>
       <div className="mt-[40px] md:mt-[50px] lg:mt-[100px] container custom-margin  ">
@@ -90,13 +113,21 @@ const ProfileHeader = () => {
             <div className="flex justify-between">
               <div className="flex flex-col gap-[4px] ">
                 <p className=" custom-text font-medium flex items-center gap-[10px] ">
-                  +998 00 000–00–00 <AiOutlineEdit className="text-[--pri] text-[20px] " />
+                 {phone ? phone : " +998 00 000–00–00" }
+                  <AiOutlineEdit
+                    onClick={() => dispatch(showModal('addPhone'))}
+                    className=" cursor-pointer text-[--pri] text-[20px] "
+                  />
                 </p>
                 <span className=" custom-text text-[--text] ">Телефон</span>
               </div>
               <div className="flex flex-col gap-[4px] ">
                 <p className=" custom-text font-medium flex items-center gap-[10px] ">
-                  {email} <AiOutlineEdit onClick={()=> dispatch(showModal("editEmail"))} className=" cursor-pointer text-[--pri] text-[20px] " />
+                  {user.email}{' '}
+                  <AiOutlineEdit
+                    onClick={() => dispatch(showModal('editEmail'))}
+                    className=" cursor-pointer text-[--pri] text-[20px] "
+                  />
                 </p>
                 <span className=" custom-text text-[--text] ">Email</span>
               </div>
@@ -104,9 +135,14 @@ const ProfileHeader = () => {
           </div>
         </div>
       </div>
+      <AddPhone />
+      <PersonalInfo
+        handleInputChange={handleInputChange}
+        handleInfo={handleInfo}
+        personalData={personalData}
+      />
       <ProfileImg />
-      <PersonalInfo />
-      <EditEmial/>
+      <EditEmial />
     </>
   );
 };
