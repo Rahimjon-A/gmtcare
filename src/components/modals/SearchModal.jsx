@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { myData } from '../../library/myData';
 import { Link } from 'react-router-dom';
 

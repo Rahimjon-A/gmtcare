@@ -5,8 +5,6 @@ import ScrollTop from '../ui/UpToTop';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { clearWarning } from '../reducers/card';
-import ModalCase from '../components/modals/ModalCase';
-import Auth from '../components/modals/Auth';
 
 const Layout = () => {
   const { warning } = useSelector((state) => state.card);

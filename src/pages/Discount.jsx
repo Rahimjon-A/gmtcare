@@ -12,7 +12,6 @@ import Card from '../ui/Card';
 import { myData } from '../library/myData';
 import PaginationComponent from '../ui/Pagination';
 import { VscSettings } from 'react-icons/vsc';
-import CatalogTitle from '../components/CatalogTitle';
 
 const Discount = () => {
   const itemsPerPage = 9;

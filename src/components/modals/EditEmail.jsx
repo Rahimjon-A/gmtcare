@@ -9,12 +9,10 @@ const EditEmail = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.gmt);
   const [email, setEmail] = useState(user?.email || '');
-  const [password, setPassword] = useState(user?.password || '');
-
  
   const handleSaveEmail = (e) => {
     e.preventDefault();
-    dispatch(updateUser({ email, password }));
+    dispatch(updateUser({ email, password: user?.password }));
     dispatch(hideModal('editEmail'));
   };
 

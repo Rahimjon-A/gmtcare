@@ -13,7 +13,7 @@ import Category from '../ui/Category';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import Menu from '../ui/Menu';
-import logo from '../../public/Logo.svg';
+import logo from '../../public/icons/Logo.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import SearchModal from './modals/SearchModal';
 import HeaderSort from './HeaderSort';

@@ -1,5 +1,5 @@
 import { IoIosStar } from 'react-icons/io';
-import commentImg from '../../../public/comment.svg';
+import commentImg from '../../../public/icons/comment.svg';
 
 const CommentsItem = ({ comment }) => {
   return (

@@ -1,8 +1,8 @@
 import Slider from "react-slick";
-import pay1 from "../../../public/payment1.png";
-import pay2 from "../../../public/payment2.png";
-import pay3 from "../../../public/payment3.png";
-import pay4 from "../../../public/payment4.png";
+import pay1 from "../../../public/images/payment1.png";
+import pay2 from "../../../public/images/payment2.png";
+import pay3 from "../../../public/images/payment3.png";
+import pay4 from "../../../public/images/payment4.png";
 import { BtnG } from "../../ui/Btn";
 
 const SingleItem3 = () => {

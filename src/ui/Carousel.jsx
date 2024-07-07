@@ -1,11 +1,8 @@
-import React, { useRef, useState } from 'react';
+import  { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { BtnG, BtnGG, BtnWG } from '../ui/Btn';
-import { GoHeart } from 'react-icons/go';
-import { LuBarChartHorizontalBig } from 'react-icons/lu';
-
+import { BtnG,  BtnWG } from '../ui/Btn';
 import Slider from 'react-slick';
 import Card from './Card';
 import { Link } from 'react-router-dom';

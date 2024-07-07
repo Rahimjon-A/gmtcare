@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import Section2 from '../../components/home/Section2';
 import Section4 from '../../components/home/Section4';
 import Title from '../../ui/Title';
-import blog1 from '../../../public/blog1.png';
-import blog2 from '../../../public/blog2.png';
+import blog1 from '../../../public/images/blog1.png';
+import blog2 from '../../../public/images/blog2.png';
 
 const News = () => {
   return (

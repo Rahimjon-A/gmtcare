@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import sertificat from '../../public/sertificat.png';
+import sertificat from '../../public/images/sertificat.png';
 import Title from './Title';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Slider from 'react-slick';

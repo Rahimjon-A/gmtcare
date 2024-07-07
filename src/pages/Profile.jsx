@@ -21,7 +21,9 @@ const Profile = () => {
           </span>
         </Link>
       </div>
+
       <ProfileHeader />
+      
       <Information />
       <History />
       <div className=" container custom-margin grid grid-cols-1  md:grid-cols-[1fr_3fr] ">

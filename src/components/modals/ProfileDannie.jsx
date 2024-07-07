@@ -31,7 +31,7 @@ const ProfileDannie = () => {
   const handleInfo = (e) => {
     e.preventDefault();
     dispatch(saveOrUpdateDannie(dannieData));
-    dispatch(hideModal('dannie'));
+    dispatch(hideModal('dannieModal'));
   };
 
   return (

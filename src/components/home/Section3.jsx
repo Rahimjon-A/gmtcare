@@ -1,8 +1,8 @@
 import Title from '../../ui/Title';
-import lightning from "../../../public/lightning.svg";
-import star from "../../../public/star.svg";
-import line from "../../../public/line.svg";
-import seven from "../../../public/7.svg";
+import lightning from "../../../public/icons/lightning.svg";
+import star from "../../../public/icons/star.svg";
+import line from "../../../public/icons/line.svg";
+import seven from "../../../public/icons/7.svg";
 
 const Section3 = () => {
   return (

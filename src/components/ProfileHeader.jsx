@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { AiFillInstagram, AiOutlineEdit } from 'react-icons/ai';
 import { FaFacebookF, FaOdnoklassniki, FaTwitter } from 'react-icons/fa';
 import { SlSocialVkontakte } from 'react-icons/sl';
@@ -9,12 +9,13 @@ import PersonalInfo from './modals/PersonalInfo';
 import { hideModal, saveOrUpdatePersonalInfo, showModal } from '../reducers/gmt';
 import EditEmial from './modals/EditEmail';
 import AddPhone from './modals/AddPhone';
+import CropperModal from './modals/Cropper';
+import ChangeParol from './modals/ChangeParol';
 
 const ProfileHeader = () => {
   const { user, personal, phone } = useSelector((state) => state.gmt);
   const firstLetter = user.email.charAt(0).toUpperCase();
   const [isActive, setIsActive] = useState(false);
-
   const dispatch = useDispatch();
 
   const [personalData, setPersonal] = useState({
@@ -38,22 +39,51 @@ const ProfileHeader = () => {
     dispatch(saveOrUpdatePersonalInfo(personalData));
     dispatch(hideModal('personalInfo'));
   };
-  
+
+  //  set avatar image
+  const [preview, setPreview] = useState(localStorage.getItem('profileImage') || '');
+  const [localPreview, setLocalPreview] = useState(preview);
+
+  const cropperRef = useRef(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLocalPreview(reader.result);
+        setLocalImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+      dispatch(hideModal('profileImg'));
+      dispatch(showModal('cropperModal'));
+    }
+  };
+
+  const handleRemve = () => {
+    setPreview(null);
+    localStorage.removeItem('profileImage');
+    setIsActive((prev) => !prev);
+  };
+
   return (
     <>
       <div className="mt-[40px] md:mt-[50px] lg:mt-[100px] container custom-margin  ">
         <div className="flex flex-wrap gap-[25px] md:gap-[66px] lg:gap-[120px] ">
           <div className=" relative">
             <div className="w-[140px] group overflow-hidden h-[140px] md:w-[180px] md:h-[180px] lg:w-[210px] lg:h-[210px] rounded-full bg-[#E1EFE6] relative ">
-              <img src="/blog2.png" alt="" className="w-full h-full object-cover " />
-              <span className=" z-20 absolute text-[60px] md:text-[70p] w-full h-full flex items-center justify-center">
-                {firstLetter}
-              </span>
+              {preview ? (
+                <img src={preview} alt="" className="w-full h-full object-cover" />
+              ) : (
+                <span className=" z-20 absolute text-[60px] md:text-[70p] w-full h-full flex items-center justify-center">
+                  {firstLetter}
+                </span>
+              )}
 
               <div
                 className={` ${
                   isActive ? 'block' : 'hidden'
-                }  cursor-pointer  group-hover:block absolute bottom-0 left-1/2 -translate-x-1/2 `}
+                }  cursor-pointer  group-hover:block z-30  absolute bottom-0 left-1/2 -translate-x-1/2 `}
               >
                 <div
                   onClick={() => setIsActive((prev) => !prev)}
@@ -69,12 +99,17 @@ const ProfileHeader = () => {
               } absolute md:bottom-[-20px] lg:bottom-[-5px] left-1/2 -translate-x-1/2 bg-white  flex-col gap-[10px] rounded-[5px] py-[10px] px-[12px] `}
             >
               <p
-                onClick={() => dispatch(showModal('profileImg'))}
+                onClick={() => {
+                  dispatch(showModal('profileImg'));
+                  setIsActive((prev) => !prev);
+                }}
                 className=" cursor-pointer text-[12px] "
               >
                 Редактировать
               </p>
-              <p className=" cursor-pointer text-[12px] text-[#C13515] ">Удалить фото</p>
+              <p onClick={handleRemve} className=" cursor-pointer text-[12px] text-[#C13515] ">
+                Удалить фото
+              </p>
             </div>
           </div>
 
@@ -106,14 +141,16 @@ const ProfileHeader = () => {
                 <span onClick={() => dispatch(showModal('personalInfo'))}>
                   <BtnW title={'Изменить персональную информацию'} />{' '}
                 </span>
-                <BtnW title={'Изменить пароль'} />
+                <span onClick={() => dispatch(showModal('changeParol'))}>
+                  <BtnW title={'Изменить пароль'} />
+                </span>
               </div>
             </div>
 
             <div className="flex justify-between">
               <div className="flex flex-col gap-[4px] ">
                 <p className=" custom-text font-medium flex items-center gap-[10px] ">
-                 {phone ? phone : " +998 00 000–00–00" }
+                  {phone ? phone : ' +998 00 000–00–00'}
                   <AiOutlineEdit
                     onClick={() => dispatch(showModal('addPhone'))}
                     className=" cursor-pointer text-[--pri] text-[20px] "
@@ -136,12 +173,19 @@ const ProfileHeader = () => {
         </div>
       </div>
       <AddPhone />
+      <ChangeParol />
       <PersonalInfo
         handleInputChange={handleInputChange}
         handleInfo={handleInfo}
         personalData={personalData}
       />
-      <ProfileImg />
+      <CropperModal
+        localPreview={localPreview}
+        cropperRef={cropperRef}
+        setPreview={setPreview}
+        setLocalPreview={setLocalPreview}
+      />
+      <ProfileImg handleImageChange={handleImageChange} />
       <EditEmial />
     </>
   );

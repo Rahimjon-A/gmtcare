@@ -1,5 +1,4 @@
 import Title from '../../ui/Title';
-import BrendsSlider from '../../ui/BrendsSlider';
 import { news } from '../../library/content';
 import { BtnG } from '../../ui/Btn';
 import NewsSlider from '../../ui/NewsSlider';

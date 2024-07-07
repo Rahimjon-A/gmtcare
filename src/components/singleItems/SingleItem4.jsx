@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SingleItem4 = () => {
   return (
     <div className="px-[25px] py-[30px] bg-white rounded-[10px] ">

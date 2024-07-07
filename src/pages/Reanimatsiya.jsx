@@ -5,9 +5,7 @@ import CustomizedAccordions from '../components/home/Accordion';
 import { BtnG } from '../ui/Btn';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import ranimtsiya from '../../public/ranimatsiya.png';
-import SingleItem from '../components/singleItems/SingleItem';
-import SingleItem3 from '../components/singleItems/SingleItem3';
+import ranimtsiya from '../../public/images/ranimatsiya.png';
 import KibinetItem from '../components/cobinetItems/KibinetItem';
 import KobinetSlider from '../components/cobinetItems/KobinetSlider';
 

@@ -54,7 +54,7 @@ const Information = () => {
           </div>
         </div>
         <div></div>
-        <div onClick={() => dispatch(showModal('dannieModal'))} className={` ${ dannie  ? "hidden" : "flex" } flex justify-end mt-[10px]`}>
+        <div onClick={() => dispatch(showModal('dannieModal'))} className={`flex justify-end mt-[10px]`}>
           <BtnG title={'Добавить плательщика'} />
         </div>
       </div>

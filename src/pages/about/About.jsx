@@ -1,8 +1,8 @@
-import aboutMonitor from '../../../public/aboutMonitor.png';
-import aboutImg from '../../../public/aboutMain.png';
-import dr1 from '../../../public/dr1.png';
-import dr2 from '../../../public/dr2.png';
-import dr3 from '../../../public/dr3.png';
+import aboutMonitor from '../../../public/images/aboutMonitor.png';
+import aboutImg from '../../../public/images/aboutMain.png';
+import dr1 from '../../../public/images/dr1.png';
+import dr2 from '../../../public/images/dr2.png';
+import dr3 from '../../../public/images/dr3.png';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState } from 'react';
 import Sertificat from '../../ui/Sertificat';

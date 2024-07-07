@@ -1,11 +1,11 @@
 import FooterSlider from '../../ui/FooterSlider';
-import mastercard from "../../../public/mastercard.svg";
-import visa from "../../../public/visa.svg";
-import mir from "../../../public/mir.svg";
-import vk from "../../../public/vk.svg";
-import telgrem from "../../../public/telegram.svg";
-import whatsapp from "../../../public/whatsapp.svg";
-import logo from "../../../public/footer.svg";
+import mastercard from "../../../public/icons/mastercard.svg";
+import visa from "../../../public/icons/visa.svg";
+import mir from "../../../public/icons/mir.svg";
+import vk from "../../../public/icons/vk.svg";
+import telgrem from "../../../public/icons/telegram.svg";
+import whatsapp from "../../../public/icons/whatsapp.svg";
+import logo from "../../../public/icons/footer.svg";
 import { Link } from 'react-router-dom';
 
 
@@ -113,7 +113,7 @@ const Footer = () => {
       {/* center */}
       <div className="container grid grid-cols-1 md:grid-cols-5 border-t pt-[10px] ">
         <div className="hidden md:block ">
-          <img src="./footer.svg" alt="" />
+          <img src="./icons/footer.svg" alt="" />
           <span className="text-[10px] text-white ">ООО «ГЛОБАЛ МЕДИКАЛ ТРЕЙД»</span>
         </div>
 

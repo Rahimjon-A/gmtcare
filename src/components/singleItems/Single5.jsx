@@ -1,5 +1,5 @@
 import { IoIosStar } from 'react-icons/io';
-import messageImg from '../../../public/message.svg';
+import messageImg from '../../../public/icons/message.svg';
 import { useState } from 'react';
 import { BtnG, BtnGG } from '../../ui/Btn';
 

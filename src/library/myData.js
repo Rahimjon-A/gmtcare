@@ -1,19 +1,19 @@
-import img1 from "../../public/img1.png";
-import img2 from "../../public/img2.png";
-import img3 from "../../public/img3.png";
-import img4 from "../../public/img4.png";
-import img5 from "../../public/img5.png";
-import img6 from "../../public/img6.png";
-import img7 from "../../public/img7.png";
-import img8 from "../../public/img8.png";
-import img9 from "../../public/img9.png";
-import img10 from "../../public/img10.png";
-import img11 from "../../public/img11.png";
-import img12 from "../../public/img12.png";
-import img13 from "../../public/img13.png";
-import img14 from "../../public/img14.png";
-import img15 from "../../public/img15.png";
-import img16 from "../../public/img16.png";
+import img1 from "../../public/images/img1.png";
+import img2 from "../../public/images/img2.png";
+import img3 from "../../public/images/img3.png";
+import img4 from "../../public/images/img4.png";
+import img5 from "../../public/images/img5.png";
+import img6 from "../../public/images/img6.png";
+import img7 from "../../public/images/img7.png";
+import img8 from "../../public/images/img8.png";
+import img9 from "../../public/images/img9.png";
+import img10 from "../../public/images/img10.png";
+import img11 from "../../public/images/img11.png";
+import img12 from "../../public/images/img12.png";
+import img13 from "../../public/images/img13.png";
+import img14 from "../../public/images/img14.png";
+import img15 from "../../public/images/img15.png";
+import img16 from "../../public/images/img16.png";
 
 
 export const myData = [

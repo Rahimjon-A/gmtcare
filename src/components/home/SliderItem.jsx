@@ -18,8 +18,8 @@ const SliderItem = () => {
       </div>
     </div>
     
-    <img src="./heroImg.png" alt="" className="h-full hidden w-full md:block " />
-    <img src="./mobileHero.png" alt="" className="h-[200px] sm:h-[300px] rounded-[10px] w-full pt-[7px] md:hidden " />
+    <img src="./images/heroImg.png" alt="" className="h-full hidden w-full md:block " />
+    <img src="./images/mobileHero.png" alt="" className="h-[200px] sm:h-[300px] rounded-[10px] w-full pt-[7px] md:hidden " />
     
   </div>
   )

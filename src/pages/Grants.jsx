@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/home/Footer';
 import Map from '../components/home/Map';
 import Title from '../ui/Title';
-import besh from '../../public/beshburchak.svg';
-import star from '../../public/dasIcon2.svg';
-import line from '../../public/line.svg';
-import seven from '../../public/dasIcon1.svg';
+import besh from '../../public/icons/beshburchak.svg';
+import star from '../../public/icons/dasIcon2.svg';
+import line from '../../public/icons/line.svg';
+import seven from '../../public/icons/dasIcon1.svg';
 import { BtnG, BtnGG, BtnW, BtnWG } from '../ui/Btn';
 
 const Grants = () => {

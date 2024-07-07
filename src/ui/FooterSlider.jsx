@@ -1,7 +1,6 @@
 import React from 'react';
 import { Collapse } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-// import 'antd/dist/antd.css';
 import './customStyles.css';
 import { Link } from 'react-router-dom';
 

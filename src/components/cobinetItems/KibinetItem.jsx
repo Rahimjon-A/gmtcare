@@ -1,5 +1,3 @@
-import React from 'react';
-
 const KibinetItem = () => {
   return (
     <div className="grid grid-cols-1 bg-white rounded-[10px] w-full md:grid-cols-2 px-[25px] pt-[20px] pb-[40px] ">

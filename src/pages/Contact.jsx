@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { CiLocationOn, CiMail } from 'react-icons/ci';
 import { BsTelephone } from 'react-icons/bs';
-import vk from '../../public/vkc.svg';
-import whatsapp from '../../public/whatsappc.svg';
-import telegram from '../../public/telegramc.svg';
+import vk from '../../public//icons/vkc.svg';
+import whatsapp from '../../public/icons/whatsappc.svg';
+import telegram from '../../public/icons/telegramc.svg';
 
 const Contact = () => {
   return (

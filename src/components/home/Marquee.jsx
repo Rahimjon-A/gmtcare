@@ -1,8 +1,8 @@
 import Marquee from 'react-fast-marquee';
-import img221 from "../../../public/img221.png";
-import img222 from "../../../public/img222.png";
-import img223 from "../../../public/img223.png";
-import img224 from "../../../public/img224.jpg";
+import img221 from "../../../public/images/img221.png";
+import img222 from "../../../public/images/img222.png";
+import img223 from "../../../public/images/img223.png";
+import img224 from "../../../public/images/img224.jpg";
 
 
 const Customer = () => {
