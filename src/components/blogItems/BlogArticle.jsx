@@ -1,5 +1,6 @@
 import React from 'react';
 import { BtnGG } from '../../ui/Btn';
+import { Link } from 'react-router-dom';
 
 const BlogArticle = ({ blog }) => {
   return (
@@ -13,9 +14,9 @@ const BlogArticle = ({ blog }) => {
           <p className='text-[10px] md:text-[12px] mb-[10px] md:mb-[15px] lg:mb-[25px]  '>14.03.2023</p>
           <p className=' custom-text text-[--text] '>{blog.content} </p>
         </div>
-        <div>
+        <Link to={"/blog/news"}>
           <BtnGG title={'Подробнее'} />
-        </div>
+        </Link>
       </div>
     </div>
   );

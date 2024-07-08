@@ -3,8 +3,7 @@ import Title from '../../ui/Title'
 import { BtnG } from '../../ui/Btn'
 
 const Mail = () => {
-  return (
-    
+  return ( 
     <div className='bg-[#e5e4ed] '>
         <div className='container grid mail justify-center sm:justify-end '>  
               <div className='pt-[35px]'>

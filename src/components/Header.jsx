@@ -20,13 +20,15 @@ import HeaderSort from './HeaderSort';
 import HeaderTop from './HeaderTop';
 import { showModal } from '../reducers/gmt';
 import Auth from './modals/Auth';
+import CityModal from './modals/CityModal';
 
 const Header = () => {
   const [cat, setCat] = useState(false);
   const [menu, setMenu] = useState(false);
   const [searchModal, setSearchModal] = useState('');
+  const [ city, setCity] = useState("Москва")
   const { cards } = useSelector((state) => state.card);
-  const { user } = useSelector((state) => state.gmt);
+  const { user} = useSelector((state) => state.gmt);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -51,7 +53,7 @@ const Header = () => {
             </Link>
 
             <div className="flex  md:hidden justify-between items-center w-full  ">
-              <img src={logo} alt="logo" className="w-[96px] h-[41px] mr-[16px] " />
+              <Link to={"/"}><img src={logo} alt="logo" className="w-[96px] h-[41px] mr-[16px] " /></Link>
               <span className="flex  items-center gap-[20px] ">
                 <FiPhone className="w-[24px] h-[24px] " />
                 <span
@@ -92,7 +94,7 @@ const Header = () => {
                 </label>
                 <SearchModal input={searchModal} handleClick={handleClick} />
               </div>
-              <Category cat={cat} />
+              <Category cat={cat} setCat={setCat} />
             </div>
 
             <p className="hidden xl:block text-[#7A7687] text-[12px] font-medium leading-[normal]">
@@ -159,8 +161,9 @@ const Header = () => {
       </div>
 
       {/* sort / categories */}
-      <HeaderSort />
+      <HeaderSort city={city} />
       <Auth />
+      <CityModal setCity={setCity} />
     </>
   );
 };

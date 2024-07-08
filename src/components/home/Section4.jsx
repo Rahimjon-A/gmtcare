@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Carousel from '../../ui/Carousel';
 import { BtnG, BtnWG } from '../../ui/Btn';
 import { myData } from '../../library/myData';

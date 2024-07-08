@@ -6,7 +6,6 @@ import seven from "../../../public/icons/7.svg";
 
 const Section3 = () => {
   return (
-    
     <div className='container mb-[60px] md:mb-[150px] '>
       <div className='mb-[25px] md:mb-[30px] lg:mb-[40px] '>
       <Title text={"Почему выбирают нас?"}/>

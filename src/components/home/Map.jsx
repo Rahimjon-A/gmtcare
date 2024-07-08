@@ -1,4 +1,3 @@
-import React from 'react';
 import ContactForm from './Contact';
 
 const Map = () => {
@@ -12,9 +11,7 @@ const Map = () => {
           className=' rounded-[10px] '
         ></iframe>
       </div>
-
       <ContactForm/>
-      
     </div>
   );
 };

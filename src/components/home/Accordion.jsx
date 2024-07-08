@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { FiArrowUpRight } from 'react-icons/fi';
 
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -69,7 +70,7 @@ export default function CustomizedAccordions({text = "Часто задавае�
           <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <Typography>
-                <p className="text-[18px] ">О компании  </p>{' '}
+                <p className="text-[18px] ">О компании  </p>
               </Typography>
             </AccordionSummary>
 

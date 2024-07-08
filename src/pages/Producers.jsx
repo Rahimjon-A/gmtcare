@@ -35,7 +35,7 @@ const Producers = () => {
   const renderDuscount = (currentItems) => (
     <div className="grid grid-cols-2 lg:grid-cols-3  gap-[10px] ">
       {currentItems.map((item) => (
-        <div key={item.id} className="border border-[--border]  rounded-[10px] overflow-hidden ">
+        <Link to={"/producers/brends"} key={item.id} className="border border-[--border]  rounded-[10px] overflow-hidden ">
           <div className="bg-white h-[152px] lg:h-[196px] flex justify-center items-center border-b border-[--border]">
             <img src={item.img} alt="image" />
           </div>
@@ -44,7 +44,7 @@ const Producers = () => {
               {item.title}
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
@@ -82,14 +82,14 @@ const Producers = () => {
               } flex-col z-10 gap-3 absolute w-full border border-[--border] rounded-[10px] p-[15px] bg-[#F8F7F3] top-[60px] right-0 `}
             >
               {menuItems.map((val, index) => (
-                <div
+                <Link to={"/kategoriya"}
                   key={index}
                   onClick={() => setValue(val)}
                   className={`text-[12px] flex justify-between items-center hover:text-[--pri] duration-200 hover:underline hover:scale-105 `}
                 >
                   {val}
                   <IoIosArrowDown className={` rotate-[-90deg] w-[17px] h-[17px]  `} />
-                </div>
+                </Link>
               ))}
             </div>
           </div>

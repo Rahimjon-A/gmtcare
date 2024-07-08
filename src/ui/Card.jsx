@@ -44,6 +44,7 @@ const Card = ({ item }) => {
   };
 
   return (
+    
     <div
       onClick={() => navigate(`/tovar/${item.id}`)}
       className="rounded-[10px]  w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "

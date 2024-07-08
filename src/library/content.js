@@ -568,102 +568,165 @@ export const arxive = [
   },
 ];
 
-
 export const producers = [
   {
-    id: "pro1",
+    id: 'pro1',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro2",
+    id: 'pro2',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro3",
+    id: 'pro3',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro4",
+    id: 'pro4',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro5",
+    id: 'pro5',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro6",
+    id: 'pro6',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro7",
+    id: 'pro7',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro8",
+    id: 'pro8',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro9",
+    id: 'pro9',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro10",
+    id: 'pro10',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro11",
+    id: 'pro11',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro12",
+    id: 'pro12',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
   {
-    id: "pro13",
+    id: 'pro13',
     img: brend1,
-    title: "НМИЦ онкологии им. Н.Н. Блохина"
+    title: 'НМИЦ онкологии им. Н.Н. Блохина',
   },
-]
+];
 
 export const countries = [
   {
-    id: "country1",
-    title: "Австралия"
+    id: 'country1',
+    title: 'Австралия',
   },
   {
-    id: "country2",
-    title: "Австрия"
+    id: 'country2',
+    title: 'Австрия',
   },
   {
-    id: "country3",
-    title: "Беларусь"
+    id: 'country3',
+    title: 'Беларусь',
   },
   {
-    id: "country4",
-    title: "Бельгия"
+    id: 'country4',
+    title: 'Бельгия',
   },
   {
-    id: "country5",
-    title: "Великобритания"
+    id: 'country5',
+    title: 'Великобритания',
   },
   {
-    id: "country6",
-    title: "Германия"
+    id: 'country6',
+    title: 'Германия',
   },
   {
-    id: "country7",
-    title: "Испания"
-  }
-]
+    id: 'country7',
+    title: 'Испания',
+  },
+];
+
+export const cityList = [
+  { id: 1, city: "Moscow" },
+  { id: 2, city: "Saint Petersburg" },
+  { id: 3, city: "Novosibirsk" },
+  { id: 4, city: "Yekaterinburg" },
+  { id: 5, city: "Nizhny Novgorod" },
+  { id: 6, city: "Kazan" },
+  { id: 7, city: "Chelyabinsk" },
+  { id: 8, city: "Omsk" },
+  { id: 9, city: "Samara" },
+  { id: 10, city: "Rostov-on-Don" },
+  { id: 11, city: "Ufa" },
+  { id: 12, city: "Krasnoyarsk" },
+  { id: 13, city: "Perm" },
+  { id: 14, city: "Voronezh" },
+  { id: 15, city: "Volgograd" },
+  { id: 16, city: "Krasnodar" },
+  { id: 17, city: "Saratov" },
+  { id: 18, city: "Tyumen" },
+  { id: 19, city: "Tolyatti" },
+  { id: 20, city: "Izhevsk" },
+  { id: 21, city: "Barnaul" },
+  { id: 22, city: "Ulyanovsk" },
+  { id: 23, city: "Irkutsk" },
+  { id: 24, city: "Khabarovsk" },
+  { id: 25, city: "Yaroslavl" },
+  { id: 26, city: "Vladivostok" },
+  { id: 27, city: "Makhachkala" },
+  { id: 28, city: "Tomsk" },
+  { id: 29, city: "Orenburg" },
+  { id: 30, city: "Kemerovo" },
+  { id: 31, city: "Novokuznetsk" },
+  { id: 32, city: "Ryazan" },
+  { id: 33, city: "Astrakhan" },
+  { id: 34, city: "Naberezhnye Chelny" },
+  { id: 35, city: "Penza" },
+  { id: 36, city: "Lipetsk" },
+  { id: 37, city: "Kirov" },
+  { id: 38, city: "Cheboksary" },
+  { id: 39, city: "Tula" },
+  { id: 40, city: "Kaliningrad" },
+  { id: 41, city: "Balashikha" },
+  { id: 42, city: "Kursk" },
+  { id: 43, city: "Stavropol" },
+  { id: 44, city: "Ulan-Ude" },
+  { id: 45, city: "Magnitogorsk" },
+  { id: 46, city: "Sochi" },
+  { id: 47, city: "Ivanovo" },
+  { id: 48, city: "Bryansk" },
+  { id: 49, city: "Belgorod" },
+  { id: 50, city: "Surgut" },
+  { id: 51, city: "Vladimir" },
+  { id: 52, city: "Arkhangelsk" },
+  { id: 53, city: "Chita" },
+  { id: 54, city: "Kaluga" },
+  { id: 55, city: "Smolensk" },
+  { id: 56, city: "Saransk" },
+  { id: 57, city: "Volzhsky" },
+  { id: 58, city: "Cherepovets" },
+  { id: 59, city: "Vologda" },
+  { id: 60, city: "Tambov" }
+];
+

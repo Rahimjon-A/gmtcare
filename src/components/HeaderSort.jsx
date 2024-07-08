@@ -4,8 +4,11 @@ import { CiLocationOn } from 'react-icons/ci'
 import { FiPhone } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { RiMenu2Fill } from 'react-icons/ri'
+import { useDispatch } from 'react-redux'
+import { showModal } from '../reducers/gmt'
 
-const HeaderSort = () => {
+const HeaderSort = ({city}) => {
+  const dispatch = useDispatch();
   return (
     <div className="border-b hidden md:block py-[20px]">
     <div className=" flex justify-between container ">
@@ -34,8 +37,8 @@ const HeaderSort = () => {
       </ul>
 
       <div className="flex gap-[17px] items-center ">
-        <span className="flex items-center gap-1 text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
-          <span>Москва</span>
+        <span onClick={()=> dispatch(showModal("cityModal"))} className="flex items-center gap-1 text-[14px] font-semibold leading-[normal] hover:text-[--pri] duration-200 cursor-pointer ">
+          <span>{city} </span>
           <CiLocationOn />
         </span>
 

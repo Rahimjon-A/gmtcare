@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { BtnG } from '../ui/Btn';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 const BrendsSlider = ({data}) => {
   const sliderRef = useRef(null);
@@ -71,9 +72,9 @@ const BrendsSlider = ({data}) => {
           </button>
         </div>
 
-        <div className="flex sm:hidden lg:flex  gap-4">
+        <Link to={"/about/serticats"} className="flex sm:hidden lg:flex  gap-4">
           <BtnG title={'Сертификаты'} />
-        </div>
+        </Link>
       </div>
     </>
   );

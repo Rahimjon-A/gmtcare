@@ -14,13 +14,12 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Dispatch register action with user data
-    dispatch(register({ email, password }));
-    // Optionally hide the modal after registration
+   dispatch(register({ email, password }));
     dispatch(hideModal('auth'));
     navigate('/profile');
   };
 
+  
   return (
     <ModalCase modalKey="auth">
       <div className="px-[25px] py-[20px]">

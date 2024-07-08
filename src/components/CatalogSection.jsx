@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CategoryList from './CategoryList';
 
 const CatalogSection = () => {
@@ -6,115 +7,115 @@ const CatalogSection = () => {
       <CategoryList />
 
       <div className="grid grid-cols-2 md:grid-cols-3  gap-[10px] mb-[25px] ">
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img10.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Ветеринарное оборудование
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img9.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Анестезиология
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden row-[span_2]  ">
-          <div className=" bg-white h-[272px] sm:h-[378px] lg:h-[534px] ">
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden row-[span_2]  ">
+          <div className=" bg-white h-[272px] sm:h-[378px] lg:h-[534px] p-[10px] lg:p-[20px] ">
             <img src="./images/img3.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className="py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px]  border-t ">
             <p className="text-[12px] md:text-[14px] lg:text-[16px]  font-medium leading-[140%]  ">
-              Дерматологическое оборудование
+            Физиотерапевтическое оборудование
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img11.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Стоматологическое оборудование
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img8.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Хирургические инструменты
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden row-[span_2]  ">
-          <div className=" bg-white h-[272px] sm:h-[378px] lg:h-[534px] ">
-            <img src="./images/img3.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden row-[span_2]  ">
+          <div className=" bg-white h-[272px] sm:h-[378px] lg:h-[534px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img16.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className="py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px]  border-t ">
             <p className="text-[12px] md:text-[14px] lg:text-[16px]  font-medium leading-[140%]  ">
-              Дерматологическое оборудование
+            Проктологическое оборудование
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img12.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Оборудование для медицинской метрологии
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img13.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Оборудование для мониторинга пациента
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img15.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Оборудование для радиационной терапии
             </p>
           </div>
-        </div>
+        </Link>
 
-        <div className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
-          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] ">
-            <img src="./images/img1.png" alt="" className="w-full h-full object-contain " />
+        <Link to={"/kategoriya"} className="border border-[--border] rounded-[10px] overflow-hidden h-[154px] sm:h-[216px] lg:h-[304px] ">
+          <div className=" bg-white h-[109px] sm:h-[148px] lg:h-[220px] p-[10px] lg:p-[20px] ">
+            <img src="./images/img14.png" alt="" className="w-full h-full object-contain " />
           </div>
           <div className=" py-[10px] px-[15px] lg:py-[20px] lg:px-[25px] pr-[50px] border-t ">
             <p className=" text-[12px] md:text-[14px] lg:text-[16px] font-medium leading-[118%] lg:leading-[140%]  ">
-              Дерматологическое оборудование{' '}
+            Педиатрическое оборудование
             </p>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

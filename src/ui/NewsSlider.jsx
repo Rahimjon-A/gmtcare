@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { BtnG } from '../ui/Btn';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 const NewsSlider = ({data}) => {
   const sliderRef = useRef(null);
@@ -73,9 +74,9 @@ const NewsSlider = ({data}) => {
           </button>
         </div>
 
-        <div className="flex sm:hidden lg:flex  gap-4">
+        <Link to={"/blog/news"} className="flex sm:hidden lg:flex  gap-4">
           <BtnG title={'Все новости'} />
-        </div>
+        </Link>
       </div>
     </>
   );

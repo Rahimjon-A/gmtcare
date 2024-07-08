@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import  { useRef } from 'react';
 import Title from '../../ui/Title';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import Slider from 'react-slick';
@@ -71,7 +71,6 @@ const Section2 = () => {
             <FaArrowRight className="w-[17px] h-[17px]" />
           </button>
         </div>
-
         <div className="flex flex-col sm:flex-row justify-center  gap-4">
           <BtnWG title={'Бесплатная консультация'} />
           <BtnG title={'Рассчитать стоимость'} />

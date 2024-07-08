@@ -75,7 +75,7 @@ const ProfileHeader = () => {
               {preview ? (
                 <img src={preview} alt="" className="w-full h-full object-cover" />
               ) : (
-                <span className=" z-20 absolute text-[60px] md:text-[70p] w-full h-full flex items-center justify-center">
+                <span className="absolute text-[60px] md:text-[70p] w-full h-full flex items-center justify-center">
                   {firstLetter}
                 </span>
               )}

@@ -28,6 +28,8 @@ import Reanimatsiya from "./pages/Reanimatsiya";
 import Korzinka from "./pages/Korzinka";
 import Wishlist from "./pages/Wishlist";
 import Compare from "./pages/Compare";
+import Kategoriya from "./pages/Kategoriya";
+import BrendsPage from "./pages/BrendsPage";
 
 const App = () => {
 
@@ -57,8 +59,16 @@ const App = () => {
           element: <Producers/>
         },
         {
+          path: "/producers/brends",
+          element: <BrendsPage/>
+        },
+        {
           path: "/catalog",
           element: <Catalog/>
+        },
+        {
+          path: "/kategoriya",
+          element: <Kategoriya/>
         },
         {
           path: "/discount",

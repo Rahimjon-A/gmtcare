@@ -17,7 +17,7 @@ module.exports = {
           '@apply text-[12px] md:text-[14px] lg:text-[16px]': {},
         },
         '.custom-links': {
-          '@apply text-[12px] md:text-[14px] lg:text-[16px]': {},
+          '@apply text-[12px] md:text-[14px]': {},
         },
         '.custom-space': {
           '@apply pt-[10px] md:pt-[20px] lg:pt-[25px]': {},
