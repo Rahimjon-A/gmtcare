@@ -1,8 +1,9 @@
-import React from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import { IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
-const Menu = ({ menu }) => {
+const Menu = ({ menu, setMenu, setContact }) => {
+  
   return (
     <div className={` ${menu ? 'top-[76px]' : ' top-[-100%] '} duration-200  absolute  z-30 w-full `}>
       <div className="flex justify-between items-center bg-[#E5E4ED] py-[15px] px-[15px]">
@@ -26,26 +27,26 @@ const Menu = ({ menu }) => {
       </div>
 
       <div className='bg-[#f8f7f3] px-[15px] h-[70vh] '>
-        <span className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
+        <Link to={"/catalog"}  onClick={()=> setMenu(false)} className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
           <p>Каталог товаров</p>
           <IoIosArrowForward />
-        </span>
-        <span className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
+        </Link>
+        <span onClick={()=> setContact(2)} className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
           <p>Информация</p>
           <IoIosArrowForward />
         </span>
-        <span className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
+        <span onClick={()=> setContact(1)} className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
           <p>Контакты</p>
           <IoIosArrowForward />
         </span>
-        <span className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
+        <Link to={"/about"} onClick={()=> setMenu(false)} className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
           <p>О нас</p>
           <IoIosArrowForward />
-        </span>
-        <span className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
+        </Link>
+        <Link to={"/compare"} onClick={()=> setMenu(false)} className='flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] '>
           <p>Сравнение</p>
           <IoIosArrowForward />
-        </span>
+        </Link>
       </div>
     </div>
   );

@@ -39,8 +39,6 @@ const KategoriyaItem = () => {
 
   useEffect(() => {
     let filteredData = myData.filter((item) => item.price >= price[0] && item.price <= price[1]);
-    
-
     let sortedData = [...filteredData];
     if (sortValue === 'price') {
       sortedData.sort((a, b) => b.price - a.price);

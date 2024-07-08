@@ -9,6 +9,7 @@ import { addCompare, setWishlist } from '../reducers/wish';
 import { setCards } from '../reducers/card';
 import { LuBarChartHorizontalBig } from 'react-icons/lu';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
+import { useEffect, useState } from 'react';
 
 const Wishlist = () => {
   const { wishlist, compare } = useSelector((state) => state.wish);
@@ -43,6 +44,27 @@ const Wishlist = () => {
     }
   };
 
+  // sort
+  const [sortData, setSortData] = useState(wishlist);
+  const [sortValue, setSortValue] = useState('');
+
+  const handleSortChange = (event) => {
+    setSortValue(event.target.value);
+  };
+
+  useEffect(() => {
+    let sortedData = [...wishlist];
+
+    if (sortValue === 'price') {
+      sortedData.sort((a, b) => b.price - a.price);
+    } else if (sortValue === 'name') {
+      sortedData.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortValue === 'date') {
+      sortedData = wishlist.filter((item) => item.status === 'Новинка');
+    }
+    setSortData(sortedData);
+  }, [sortValue]);
+
   return (
     <>
       <div className=" container flex pt-[20px] gap-2 custom-text ">
@@ -62,7 +84,7 @@ const Wishlist = () => {
         <div className="container custom-margin mt-[40px] md:mt-[50px] lg:mt-[100px]">
           <p className=" custom-title mb-[20px] lg:mb-[40px]"> Избранное</p>
 
-          <div className="grid gap-[20px] grid-cols-1  lg:grid-cols-[1fr_3fr] ">
+          <div className="grid grid-cols-1 gap-[20px] lg:grid-cols-[1fr_3fr] ">
             <div className="flex gap-[20px] lg:flex-col lg:gap-[10px] ">
               <p
                 className={` cursor-pointer hover:text-[--pri] hover:underline duration-200 text-[--second] custom-text font-medium `}
@@ -83,11 +105,14 @@ const Wishlist = () => {
 
             <div>
               <div className="flex justify-between px-[20px] py-3 border border-[--border] rounded-[10px] mb-[10px] ">
-                <select className="bg-transparent outline-none custom-text ">
-                  <option value="">По популярности</option>
-                  <option value="">По цене</option>
-                  <option value="">По наименованию</option>
-                  <option value="">По новинкам</option>
+                <select
+                  onChange={handleSortChange}
+                  className="bg-transparent outline-none custom-text "
+                >
+                  <option>По популярности</option>
+                  <option value="price">По цене</option>
+                  <option value="name">По наименованию</option>
+                  <option value="date">По новинкам</option>
                 </select>
 
                 <div className="flex gap-[10px] items-center ">
@@ -96,9 +121,8 @@ const Wishlist = () => {
                 </div>
               </div>
 
-
               <div className="grid grid-cols-2 md:grid-cols-3 gap-[10px] ">
-                {wishlist.map((item) => {
+                {sortData.map((item) => {
                   const isLiked = wishlist.some((cartItem) => cartItem.id === item.id);
                   const isCompared = compare.some((cartItem) => cartItem.id === item.id);
                   return (
@@ -119,7 +143,12 @@ const Wishlist = () => {
                           {item.status}
                         </span>
                         <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
-                          <LuBarChartHorizontalBig onClick={(e)=> handleCompare(e, item)} className={` ${isCompared ? "text-[--pri]" : "text-[--second] "} w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`} />
+                          <LuBarChartHorizontalBig
+                            onClick={(e) => handleCompare(e, item)}
+                            className={` ${
+                              isCompared ? 'text-[--pri]' : 'text-[--second] '
+                            } w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`}
+                          />
 
                           <div onClick={(e) => handleLikeClick(e, item)}>
                             {isLiked ? (
@@ -159,6 +188,12 @@ const Wishlist = () => {
                 })}
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center md:justify-end mt-[30px] md:mt-[40px] lg:mt-[50px] ">
+            <Link to={'/catalog'}>
+              <BtnG title={'В каталог'} />
+            </Link>
           </div>
         </div>
       )}

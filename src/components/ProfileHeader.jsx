@@ -12,7 +12,7 @@ import AddPhone from './modals/AddPhone';
 import CropperModal from './modals/Cropper';
 import ChangeParol from './modals/ChangeParol';
 
-const ProfileHeader = () => {
+const ProfileHeader = ({ preview, setPreview, localPreview, setLocalPreview, handleRemve }) => {
   const { user, personal, phone } = useSelector((state) => state.gmt);
   const firstLetter = user.email.charAt(0).toUpperCase();
   const [isActive, setIsActive] = useState(false);
@@ -41,8 +41,6 @@ const ProfileHeader = () => {
   };
 
   //  set avatar image
-  const [preview, setPreview] = useState(localStorage.getItem('profileImage') || '');
-  const [localPreview, setLocalPreview] = useState(preview);
 
   const cropperRef = useRef(null);
 
@@ -58,12 +56,6 @@ const ProfileHeader = () => {
       dispatch(hideModal('profileImg'));
       dispatch(showModal('cropperModal'));
     }
-  };
-
-  const handleRemve = () => {
-    setPreview(null);
-    localStorage.removeItem('profileImage');
-    setIsActive((prev) => !prev);
   };
 
   return (
@@ -107,7 +99,13 @@ const ProfileHeader = () => {
               >
                 Редактировать
               </p>
-              <p onClick={handleRemve} className=" cursor-pointer text-[12px] text-[#C13515] ">
+              <p
+                onClick={() => {
+                  setIsActive((prev) => !prev);
+                  handleRemve();
+                }}
+                className=" cursor-pointer text-[12px] text-[#C13515] "
+              >
                 Удалить фото
               </p>
             </div>

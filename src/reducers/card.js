@@ -15,30 +15,12 @@ export const cardSlice = createSlice({
   initialState,
 
   reducers: {
-    handleLiked: (state, action) => {
-      const itemId = action.payload;
-      const itemIndex = state.items.findIndex((item) => item.id === itemId);
-      if (itemIndex !== -1) {
-        state.items[itemIndex].isLiked = !state.items[itemIndex].isLiked;
-      }
-    },
-
     handleActive: (state, action) => {
       state.active = action.payload;
     },
-
-    openModal: (state) => {
-      state.modal = true;
-    },
-
-    closeModal: (state) => {
-      state.modal = false;
-    },
-
     setItems: (state, action) => {
       state.items = action.payload;
     },
-
     clearWarning: (state) => {
       state.warning = false;
     },

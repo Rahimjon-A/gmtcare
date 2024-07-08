@@ -31,7 +31,13 @@ export const gmtSlice = createSlice({
     },
     logout: (state) => {
       state.user = null;
+      state.personal = null;
+      state.dannie = null;
+      state.phone = null;
       localStorage.removeItem('user');
+      localStorage.removeItem('personal');
+      localStorage.removeItem('dannie');
+      localStorage.removeItem('phone');
     },
     saveOrUpdatePersonalInfo: (state, action) => {
       state.personal = { ...state.personal, ...action.payload };

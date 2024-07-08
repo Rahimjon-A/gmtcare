@@ -1,12 +1,32 @@
 import Footer from '../components/home/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BtnG } from '../ui/Btn';
 import History from '../components/user/History';
 import ProfileHeader from '../components/ProfileHeader';
 import Information from '../components/Information';
+import { useDispatch } from 'react-redux';
+import { logout } from '../reducers/gmt';
+import { useState } from 'react';
 
 const Profile = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [preview, setPreview] = useState(localStorage.getItem('profileImage') || '');
+  const [localPreview, setLocalPreview] = useState(preview);
+
+  const handleRemve = () => {
+    setPreview(null);
+    localStorage.removeItem('profileImage');
+  };
+
+  const logOut = () => {
+    dispatch(logout());
+    handleRemve();
+    navigate('/');
+  };
+
   return (
     <>
       <div className=" container flex pt-[20px] gap-2 custom-text ">
@@ -22,8 +42,15 @@ const Profile = () => {
         </Link>
       </div>
 
-      <ProfileHeader />
-      
+      <ProfileHeader
+        logOut={logOut}
+        preview={preview}
+        setPreview={setPreview}
+        localPreview={localPreview}
+        setLocalPreview={setLocalPreview}
+        handleRemve={handleRemve}
+      />
+
       <Information />
       <History />
       <div className=" container custom-margin grid grid-cols-1  md:grid-cols-[1fr_3fr] ">
@@ -94,7 +121,9 @@ const Profile = () => {
         </div>
         <div></div>
         <div className="mt-[50px] md:mt-[80px] lg:mt-[100px] ">
-          <BtnG title={'Выйти'} />
+          <span onClick={logOut}>
+            <BtnG title={'Выйти'} />
+          </span>
         </div>
       </div>
       <Footer />

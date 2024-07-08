@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BtnG, BtnW } from '../ui/Btn';
 import { addCompare, setWishlist } from '../reducers/wish';
-import { decrement, increment, handleRemove, handlePrice } from '../reducers/card';
+import { decrement, increment, handleRemove, handlePrice, handleReset } from '../reducers/card';
+import { showModal } from '../reducers/gmt';
+import HelpModal from '../components/modals/helpModal';
 
 const Korzinka = () => {
   const { cards, totalPrice } = useSelector((state) => state.card);
@@ -134,7 +136,9 @@ const Korzinka = () => {
                     </span>
                     <LuBarChartHorizontalBig
                       onClick={() => dispatch(addCompare(card))}
-                      className={`${isCompared ? "text-[--pri] " : "text-[--second] "} rotate-[-90deg] w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 `}
+                      className={`${
+                        isCompared ? 'text-[--pri] ' : 'text-[--second] '
+                      } rotate-[-90deg] w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] cursor-pointer hover:text-[--pri] hover:scale-105 duration-200 `}
                     />
                     <IoCloseSharp
                       onClick={() => dispatch(handleRemove(card.id))}
@@ -164,14 +168,26 @@ const Korzinka = () => {
               </span>
 
               <span className="flex flex-col gap-[10px] mt-[20px]">
-                <BtnG title={'Оформить заказ'} />
-                <BtnW title={'Задать вопрос'} />
+                
+                <span
+                  onClick={() => dispatch(handleReset())}
+                  className='btnG text-center cursor-pointer'
+                >
+                  Оформить заказ
+                </span>
+                <span
+                  onClick={() => dispatch(showModal('helpModal'))}
+                  className='className="text-[12px] text-center cursor-pointer px-[10px]  py-2 lg:py-[11px] md:px-[20px] lg:px-[30px] border border-[--border] text-[--second] rounded-full font-semibold  hover:border-[#07745E] duration-200  "'
+                >
+                  Задать вопрос
+                </span>
               </span>
             </div>
           </div>
         </div>
       </div>
       <Footer />
+      <HelpModal />
     </>
   );
 };

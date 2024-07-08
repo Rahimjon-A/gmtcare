@@ -21,14 +21,18 @@ import HeaderTop from './HeaderTop';
 import { showModal } from '../reducers/gmt';
 import Auth from './modals/Auth';
 import CityModal from './modals/CityModal';
+import CallModal from './modals/CallModal';
+import ContactModal from './modals/ContactModal';
+import InfoModal from './modals/InfoModal';
 
 const Header = () => {
   const [cat, setCat] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [ contact, setContact] = useState(0);
   const [searchModal, setSearchModal] = useState('');
-  const [ city, setCity] = useState("Москва")
+  const [city, setCity] = useState('Москва');
   const { cards } = useSelector((state) => state.card);
-  const { user} = useSelector((state) => state.gmt);
+  const { user } = useSelector((state) => state.gmt);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -53,9 +57,14 @@ const Header = () => {
             </Link>
 
             <div className="flex  md:hidden justify-between items-center w-full  ">
-              <Link to={"/"}><img src={logo} alt="logo" className="w-[96px] h-[41px] mr-[16px] " /></Link>
+              <Link to={'/'}>
+                <img src={logo} alt="logo" className="w-[96px] h-[41px] mr-[16px] " />
+              </Link>
               <span className="flex  items-center gap-[20px] ">
-                <FiPhone className="w-[24px] h-[24px] " />
+                <FiPhone
+                  onClick={() => dispatch(showModal('callModal'))}
+                  className="w-[24px] h-[24px] cursor-pointer "
+                />
                 <span
                   onClick={() => setMenu((prev) => !prev)}
                   className=" cursor-pointer hover:text-[--pri] duration-200 "
@@ -157,13 +166,17 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <Menu menu={menu} />
+        <Menu menu={menu} setMenu={setMenu} setContact={setContact} />
       </div>
 
       {/* sort / categories */}
       <HeaderSort city={city} />
+
       <Auth />
       <CityModal setCity={setCity} />
+      <CallModal />
+      <ContactModal  contact={contact} setContact={setContact} setMenu={setMenu}/>
+      <InfoModal contact={contact} setContact={setContact} setMenu={setMenu}/>
     </>
   );
 };
