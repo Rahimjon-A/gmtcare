@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { hideModal } from '../../reducers/gmt';
 import ModalCase from './ModalCase';
 import { IoCloseSharp } from 'react-icons/io5';
+import dr3 from "../../../public/images/dr3.png"
 
 const Consultatsiya = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Consultatsiya = () => {
     <ModalCase modalKey="consultatsiya">
       <div className="px-[25px] py-[20px]">
         <div className="flex justify-between items-center mb-[40px]">
-          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">Рассчитать стоимость</p>
+          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">Получить консультацию</p>
           <IoCloseSharp
             onClick={() => dispatch(hideModal('consultatsiya'))}
             className="w-[20px] h-[20px] cursor-pointer"
@@ -20,7 +21,7 @@ const Consultatsiya = () => {
         <div className="flex items-center gap-[10px] mb-[30px]">
           <div className="relative w-[50px] h-[50px] rounded-full  ">
             <img
-              src="./public/images/dr3.png"
+              src={dr3}
               alt=""
               className=" w-full h-full object-cover rounded-full "
             />

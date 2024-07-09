@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { hideModal } from '../../reducers/gmt';
 import ModalCase from './ModalCase';
 import { IoCloseSharp } from 'react-icons/io5';
+import dr3 from "../../../public/images/dr3.png"
 
 const CallModal = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const CallModal = () => {
         <div className="flex items-center gap-[10px] mb-[30px]">
           <div className="relative w-[50px] h-[50px] rounded-full  ">
             <img
-              src="./public/images/dr3.png"
+              src={dr3}
               alt=""
               className=" w-full h-full object-cover rounded-full "
             />
