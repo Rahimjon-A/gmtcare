@@ -28,10 +28,11 @@ import InfoModal from './modals/InfoModal';
 const Header = () => {
   const [cat, setCat] = useState(false);
   const [menu, setMenu] = useState(false);
-  const [ contact, setContact] = useState(0);
+  const [contact, setContact] = useState(0);
   const [searchModal, setSearchModal] = useState('');
   const [city, setCity] = useState('Москва');
   const { cards } = useSelector((state) => state.card);
+  const { wishlist, compare } = useSelector((state) => state.wish);
   const { user } = useSelector((state) => state.gmt);
   const dispatch = useDispatch();
 
@@ -116,8 +117,8 @@ const Header = () => {
               <Link to={`/profile`}>
                 <div className="flex cursor-pointer group flex-col items-center gap-1 ">
                   <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
-                  <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                    Войти
+                  <span className="hidden capitalize lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
+                  профиль
                   </span>
                 </div>
               </Link>
@@ -128,26 +129,36 @@ const Header = () => {
               >
                 <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
                 <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                  Войти
+                 Войти
                 </span>
               </div>
             )}
 
             <Link to={'/wishlist'}>
-              <div className="flex cursor-pointer group flex-col items-center gap-1 ">
+              <div className="flex cursor-pointer group flex-col items-center gap-1 relative ">
                 <GoHeart className="text-[20px] group-hover:text-[--pri] duration-200 " />
                 <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
                   Избранное
                 </span>
+                {wishlist.length > 0 && (
+                  <span className="absolute md:bottom-[13px] md:right-[-8px] lg:bottom-[30px] lg:right-3 flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+                    {wishlist.length}
+                  </span>
+                )}
               </div>
             </Link>
 
             <Link to={'/compare'}>
-              <div className="flex cursor-pointer group flex-col items-center gap-1 ">
+              <div className="flex cursor-pointer group flex-col items-center gap-1 relative ">
                 <LuBarChartHorizontalBig className="text-[20px] group-hover:text-[--pri] duration-200 rotate-[-90deg] " />
                 <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
                   Сравнить
                 </span>
+                {compare.length > 0 && (
+                  <span className="absolute md:bottom-[13px] md:right-[-8px] lg:bottom-[30px] lg:right-1 flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+                    {compare.length}
+                  </span>
+                )}
               </div>
             </Link>
 
@@ -175,8 +186,8 @@ const Header = () => {
       <Auth />
       <CityModal setCity={setCity} />
       <CallModal />
-      <ContactModal  contact={contact} setContact={setContact} setMenu={setMenu}/>
-      <InfoModal contact={contact} setContact={setContact} setMenu={setMenu}/>
+      <ContactModal contact={contact} setContact={setContact} setMenu={setMenu} />
+      <InfoModal contact={contact} setContact={setContact} setMenu={setMenu} />
     </>
   );
 };

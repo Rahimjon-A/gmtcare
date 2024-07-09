@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BtnG, BtnW } from '../ui/Btn';
 import { addCompare, setWishlist } from '../reducers/wish';
-import { decrement, increment, handleRemove, handlePrice, handleReset } from '../reducers/card';
+import { decrement, increment, handleRemove, handlePrice} from '../reducers/card';
 import { showModal } from '../reducers/gmt';
 import HelpModal from '../components/modals/helpModal';
 
@@ -168,13 +168,7 @@ const Korzinka = () => {
               </span>
 
               <span className="flex flex-col gap-[10px] mt-[20px]">
-                
-                <span
-                  onClick={() => dispatch(handleReset())}
-                  className='btnG text-center cursor-pointer'
-                >
-                  Оформить заказ
-                </span>
+                <span className="btnG text-center cursor-pointer">Оформить заказ</span>
                 <span
                   onClick={() => dispatch(showModal('helpModal'))}
                   className='className="text-[12px] text-center cursor-pointer px-[10px]  py-2 lg:py-[11px] md:px-[20px] lg:px-[30px] border border-[--border] text-[--second] rounded-full font-semibold  hover:border-[#07745E] duration-200  "'

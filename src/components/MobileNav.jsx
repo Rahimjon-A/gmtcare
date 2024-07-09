@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom';
 
 const MobileNav = () => {
   const { active, user } = useSelector((state) => state.gmt);
+  const { wishlist, compare } = useSelector((state) => state.wish);
+  const { cards } = useSelector((state) => state.card);
+
   const dispatch = useDispatch();
 
   return (
@@ -32,13 +35,14 @@ const MobileNav = () => {
       </Link>
 
       <Link
-        to={'/catalog'}
+        to={'/compare'}
         onClick={() => dispatch(handleActive(1))}
         className={` ${
           active === 1 ? 'text-[--pri] ' : 'text-[--second] '
-        } flex cursor-pointer group flex-col items-center gap-1 `}
+        } flex cursor-pointer group flex-col items-center gap-1 relative `}
       >
         <MdManageSearch className="text-[24px] group-hover:text-[--pri] duration-200 " />
+
         <span
           className={` ${
             active === 1 ? 'text-[--pri] ' : 'text-[#7A7687]'
@@ -46,6 +50,12 @@ const MobileNav = () => {
         >
           Сравнить
         </span>
+
+        {compare.length > 0 && (
+          <span className="absolute right-[9px] bottom-[30px] flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+            {compare.length}
+          </span>
+        )}
       </Link>
 
       <Link
@@ -53,7 +63,7 @@ const MobileNav = () => {
         onClick={() => dispatch(handleActive(2))}
         className={` ${
           active === 2 ? 'text-[--pri] ' : 'text-[--second] '
-        } flex cursor-pointer group flex-col items-center gap-1 `}
+        } flex cursor-pointer group flex-col items-center gap-1 relative `}
       >
         <PiShoppingCartSimple className="text-[20px] group-hover:text-[--pri] duration-200 " />
         <span
@@ -63,6 +73,12 @@ const MobileNav = () => {
         >
           Корзина
         </span>
+
+        {cards.length > 0 && (
+          <span className="absolute right-[5px] bottom-[30px] flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+            {cards.length}
+          </span>
+        )}
       </Link>
 
       <Link
@@ -70,7 +86,7 @@ const MobileNav = () => {
         onClick={() => dispatch(handleActive(3))}
         className={` ${
           active === 3 ? 'text-[--pri] ' : 'text-[--second] '
-        } flex cursor-pointer group flex-col items-center gap-1 `}
+        } flex cursor-pointer group flex-col items-center gap-1 relative `}
       >
         <GoHeart className="text-[20px] group-hover:text-[--pri] duration-200 " />
         <span
@@ -80,6 +96,11 @@ const MobileNav = () => {
         >
           Избранное
         </span>
+        {wishlist.length > 0 && (
+          <span className="absolute right-[13px] bottom-[30px] flex justify-center items-center text-white font-medium bg-[--pri] rounded-full w-[15px] h-[15px] text-[10px] ">
+            {wishlist.length}
+          </span>
+        )}
       </Link>
 
       {user ? (
@@ -103,7 +124,7 @@ const MobileNav = () => {
         <Link
           onClick={() => {
             dispatch(handleActive(4));
-            dispatch(showModal("auth"));
+            dispatch(showModal('auth'));
           }}
           className={` ${
             active === 4 ? 'text-[--pri] ' : 'text-[--second] '
