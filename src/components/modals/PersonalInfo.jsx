@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { hideModal} from '../../reducers/gmt';
+import { hideModal } from '../../reducers/gmt';
 import ModalCase from './ModalCase';
 import { IoCloseSharp } from 'react-icons/io5';
 
-const PersonalInfo = ({handleInfo, handleInputChange, personalData}) => {
+const PersonalInfo = ({ handleInfo, handleInputChange, personalData }) => {
   const dispatch = useDispatch();
   return (
     <ModalCase modalKey="personalInfo">

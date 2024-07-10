@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || null,
-  personal: JSON.parse(localStorage.getItem('personal')) || {}, 
-  dannie: JSON.parse(localStorage.getItem('dannie')) || {}, 
+  personal: JSON.parse(localStorage.getItem('personal')) || {},
+  dannie: JSON.parse(localStorage.getItem('dannie')) || {},
   phone: localStorage.getItem('phone') || '',
   active: 0,
 };
@@ -63,7 +63,7 @@ export const {
   register,
   saveOrUpdatePersonalInfo,
   saveOrUpdateDannie,
-  savePhoneNumber
+  savePhoneNumber,
 } = gmtSlice.actions;
 
 export default gmtSlice.reducer;

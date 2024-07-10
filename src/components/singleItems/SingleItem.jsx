@@ -1,10 +1,11 @@
-
 const SingleItem = () => {
   return (
-    <div className='px-[25px] py-[30px] bg-white rounded-[10px]' >
-      <p className='text-[12px] md:text-[16px] lg:text-[18px] font-semibold pb-[10px] border-b sm:border-b-0  '>Описание оборудования</p>
+    <div className="px-[25px] py-[30px] bg-white rounded-[10px]">
+      <p className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold pb-[10px] border-b sm:border-b-0  ">
+        Описание оборудования
+      </p>
       <div>
-        <p className='text-[12px] text-[--text] '>
+        <p className="text-[12px] text-[--text] ">
           Биохимический анализатор Mindr UA-66 оснащен открытой платформой для загрузки образцов и
           отлично размещается на столе в кабинете врача. Функциональная сочетаемость с
           дополнительным модулем ISE обеспечивает увеличение «скорострельности» прибора от 100 до

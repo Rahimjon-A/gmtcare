@@ -9,7 +9,7 @@ import { clearWarning } from '../reducers/card';
 const Layout = () => {
   const { warning } = useSelector((state) => state.card);
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     if (warning) {
       const timer = setTimeout(() => {
@@ -29,7 +29,7 @@ const Layout = () => {
             onClick={() => dispatch(handleActive(1))}
             className="text-[--border] underline "
           >
-           Перейти в корзину
+            Перейти в корзину
           </Link>
         </div>
       )}

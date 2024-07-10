@@ -4,12 +4,11 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideModal, updateUser } from '../../reducers/gmt';
 
-
 const EditEmail = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.gmt);
   const [email, setEmail] = useState(user?.email || '');
- 
+
   const handleSaveEmail = (e) => {
     e.preventDefault();
     dispatch(updateUser({ email, password: user?.password }));

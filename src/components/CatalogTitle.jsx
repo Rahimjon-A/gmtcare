@@ -5,12 +5,11 @@ import { menuItems } from '../library/content';
 import { VscSettings } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 
-const CatalogTitle = ({text = "Популярные категории"}) => {
+const CatalogTitle = ({ text = 'Популярные категории' }) => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState('Направления');
 
   return (
-
     <div className="flex flex-col container md:flex-row md:justify-between md:items-center pt-[10px] ">
       <div className="lg:hidden">
         <Title text={text} />
@@ -32,7 +31,8 @@ const CatalogTitle = ({text = "Популярные категории"}) => {
           } flex-col gap-3 absolute w-full border border-[--border] rounded-[10px] p-[15px] bg-[#F8F7F3] top-[60px] right-0 `}
         >
           {menuItems.map((val, index) => (
-            <Link to={"/kategoriya"}
+            <Link
+              to={'/kategoriya'}
               key={index}
               onClick={() => setValue(val)}
               className={`text-[12px] flex justify-between items-center hover:text-[--pri] duration-200 hover:underline hover:scale-105 `}

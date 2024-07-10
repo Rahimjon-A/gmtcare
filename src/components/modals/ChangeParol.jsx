@@ -10,22 +10,21 @@ const ChangeParol = () => {
   const [password, setPassword] = useState('');
   const [newParol, setNewParol] = useState('');
   const [confirmParol, setConfirmParol] = useState('');
-  const [ error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const handleChangePassword = (e) => {
     e.preventDefault();
     const initialParol = user.password;
     if (initialParol === password) {
       if (newParol === confirmParol) {
-        dispatch(updateUser({ password:newParol, email: user?.email }));
+        dispatch(updateUser({ password: newParol, email: user?.email }));
         dispatch(hideModal('changeParol'));
-        setError("")
+        setError('');
       } else {
-        setError("New and Confirm password must be the same")
+        setError('New and Confirm password must be the same');
       }
-
     } else {
-      setError("Incorrect password");
+      setError('Incorrect password');
     }
   };
 
@@ -61,7 +60,10 @@ const ChangeParol = () => {
             placeholder="Повторите новый пароль*"
             onChange={(e) => setConfirmParol(e.target.value)}
           />
-          <div className='text-red-500 text-[12px] md:text-[14px] w-full text-center mb-1 '> {error} </div>
+          <div className="text-red-500 text-[12px] md:text-[14px] w-full text-center mb-1 ">
+            {' '}
+            {error}{' '}
+          </div>
           <button className="btnG w-full">Сохранить</button>
         </form>
       </div>

@@ -1,4 +1,3 @@
-
 const tabData = [
   {
     name: 'Вес оборудования',
@@ -41,20 +40,14 @@ const SingleItem2 = () => {
         Описание оборудования
       </p>
       <div className="grid grid-cols-1 w-full md:w-[50%] lg:w-full lg:grid-cols-2 ">
-
         {tabData.map((tab, index) => (
-          
-            <div key={index} className="grid grid-cols-2  ">
-              <p className="text-[10px] lg:text-[12px] text-[--text] mb-[10px] ">
-                {tab.name} . . . . . . . . . . .
-              </p>
-              <p className="text-[10px] lg:text-[12px] font-medium text-[--second] "> 
-                {tab.value}
-              </p>
-            </div>
-          
+          <div key={index} className="grid grid-cols-2  ">
+            <p className="text-[10px] lg:text-[12px] text-[--text] mb-[10px] ">
+              {tab.name} . . . . . . . . . . .
+            </p>
+            <p className="text-[10px] lg:text-[12px] font-medium text-[--second] ">{tab.value}</p>
+          </div>
         ))}
-
       </div>
     </div>
   );

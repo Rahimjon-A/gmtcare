@@ -30,7 +30,7 @@ const CropperModal = ({ cropperRef, localPreview, setPreview, setLocalPreview })
           />
         </div>
 
-        <div className=' w-[305px] h-[305px] md:w-[318px] md:h-[318px] lg:w-[450px] lg:h-[450px] mb-[40px] '>
+        <div className=" w-[305px] h-[305px] md:w-[318px] md:h-[318px] lg:w-[450px] lg:h-[450px] mb-[40px] ">
           <Cropper
             ref={cropperRef}
             style={{ height: '100%', width: '100%' }}

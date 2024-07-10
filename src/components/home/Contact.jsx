@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BtnG } from '../../ui/Btn';
 
-const ContactForm = ({ title = "Остались вопросы?"}) => {
+const ContactForm = ({ title = 'Остались вопросы?' }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -21,7 +21,7 @@ const ContactForm = ({ title = "Остались вопросы?"}) => {
       phone: '',
       email: '',
       question: '',
-    })
+    });
   };
 
   return (

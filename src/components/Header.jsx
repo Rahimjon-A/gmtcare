@@ -118,7 +118,7 @@ const Header = () => {
                 <div className="flex cursor-pointer group flex-col items-center gap-1 ">
                   <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
                   <span className="hidden capitalize lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                  профиль
+                    профиль
                   </span>
                 </div>
               </Link>
@@ -129,7 +129,7 @@ const Header = () => {
               >
                 <FaRegUser className="text-[20px] group-hover:text-[--pri] duration-200 " />
                 <span className="hidden lg:block text-[#7A7687] text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer ">
-                 Войти
+                  Войти
                 </span>
               </div>
             )}

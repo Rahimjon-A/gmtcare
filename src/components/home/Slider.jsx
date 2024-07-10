@@ -22,7 +22,6 @@ const Slider = () => {
       setIsShow((prevSlide) => (prevSlide % 3) + 1);
     }, 4000);
 
-   
     return () => clearInterval(intervalId);
   }, []);
 

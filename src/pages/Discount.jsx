@@ -101,7 +101,6 @@ const Discount = () => {
             Рентгены
           </p>
         </div>
-        
       </div>
 
       <div className="mt-[20px] container grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-[10px] ">

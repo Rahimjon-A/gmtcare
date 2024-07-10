@@ -1,30 +1,29 @@
-import Slider from "react-slick";
-import pay1 from "../../../public/images/payment1.png";
-import pay2 from "../../../public/images/payment2.png";
-import pay3 from "../../../public/images/payment3.png";
-import pay4 from "../../../public/images/payment4.png";
-import { BtnG } from "../../ui/Btn";
+import Slider from 'react-slick';
+import pay1 from '../../../public/images/payment1.png';
+import pay2 from '../../../public/images/payment2.png';
+import pay3 from '../../../public/images/payment3.png';
+import pay4 from '../../../public/images/payment4.png';
+import { BtnG } from '../../ui/Btn';
 
 const SingleItem3 = () => {
-
   const payData = [
     {
       img: pay1,
-      title: "Апробация"
-     },
+      title: 'Апробация',
+    },
     {
       img: pay2,
-      title: "Помощь в подборе оборудования"
-     },
+      title: 'Помощь в подборе оборудования',
+    },
     {
       img: pay3,
-      title: "Помощь инженеров в настройке"
-     },
+      title: 'Помощь инженеров в настройке',
+    },
     {
       img: pay4,
-      title: "Пуско-наладочные работы"
-     },
-  ]
+      title: 'Пуско-наладочные работы',
+    },
+  ];
 
   const settings = {
     dots: false,
@@ -56,10 +55,15 @@ const SingleItem3 = () => {
 
   return (
     <div className="relative px-[25px] py-[25px] bg-white rounded-[10px] ">
-      <p className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold pb-[20px] border-b md:border-b-0   "> Услуги и сервис</p>
+      <p className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold pb-[20px] border-b md:border-b-0   ">
+        Услуги и сервис
+      </p>
       <Slider {...settings}>
         {payData.map((item, index) => (
-          <div key={index} className="border border-[--border] lg:h-[224px]  rounded-[10px] overflow-hidden ">
+          <div
+            key={index}
+            className="border border-[--border] lg:h-[224px]  rounded-[10px] overflow-hidden "
+          >
             <div className="bg-white h-[102px] lg:h-[146px] flex justify-center items-center border-b border-[--border]">
               <img src={item.img} alt="image" className="w-full h-full" />
             </div>
@@ -72,7 +76,7 @@ const SingleItem3 = () => {
         ))}
       </Slider>
       <div className="flex justify-center pt-[20px]  ">
-      <BtnG title={"Все услуги"}/>
+        <BtnG title={'Все услуги'} />
       </div>
     </div>
   );

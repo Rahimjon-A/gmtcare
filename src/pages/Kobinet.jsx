@@ -29,7 +29,7 @@ const Kobinet = () => {
         <p className=" custom-title mb-[20px] md:mb-[30px] lg:mb-[40px] ">Кабинеты под ключ</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] ">
           {kluch.map((item) => (
-            <Link to={"/kobinet/reanimatsiya"}>
+            <Link to={'/kobinet/reanimatsiya'}>
               <div key={item.id} className="bg-white rounded-[10px] border border-[--border]  ">
                 <img src={item.img} alt="" />
                 <div className="p-[15px] lg:p-[20px] ">

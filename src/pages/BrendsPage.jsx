@@ -57,10 +57,10 @@ const BrendsPage = () => {
         </div>
       </div>
 
-      <div className=' container mb-[25px] lg:mb-[40px] '>
+      <div className=" container mb-[25px] lg:mb-[40px] ">
         <Title text={'Оборудование Draeger'} />
       </div>
-        <KategoriyaItem />
+      <KategoriyaItem />
       <Brends />
       <CustomizedAccordions />
       <Map />

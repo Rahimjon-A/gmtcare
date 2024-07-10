@@ -44,7 +44,6 @@ const Card = ({ item }) => {
   };
 
   return (
-    
     <div
       onClick={() => navigate(`/tovar/${item.id}`)}
       className="rounded-[10px]  w-full max-w-[236px] md:max-w-[320px] border border-[--border] overflow-hidden "
@@ -62,7 +61,12 @@ const Card = ({ item }) => {
           {item.status}
         </span>
         <div className="flex items-center gap-[10px] absolute top-[15px] right-[15px]">
-          <LuBarChartHorizontalBig onClick={(e)=> handleCompare(e, item)} className={` ${ isCompared ? "text-[--pri] " : "text-[--second] "} w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`} />
+          <LuBarChartHorizontalBig
+            onClick={(e) => handleCompare(e, item)}
+            className={` ${
+              isCompared ? 'text-[--pri] ' : 'text-[--second] '
+            } w-6 h-6 rotate-[-90deg] hover:text-[--pri] duration-200 cursor-pointer`}
+          />
 
           <div onClick={(e) => handleLikeClick(e, item)}>
             {isLiked ? (

@@ -105,27 +105,27 @@ const Single5 = () => {
 
           <div className="flex flex-col gap-2 mb-[15px] ">
             <div className="grid grid-cols-[2fr_4fr_1fr] justify-between items-center ">
-              <p className='text-[12px] md:text-[14px] '>5 звезд</p>
+              <p className="text-[12px] md:text-[14px] ">5 звезд</p>
               <span className="bg-[#FFC536]  block mx-auto w-full h-[4px]  rounded-full "></span>
               <p className="text-end text-[12px] md:text-[14px] ">12</p>
             </div>
             <div className="grid grid-cols-[2fr_4fr_1fr] justify-between items-center ">
-              <p className='text-[12px] md:text-[14px] '>4 звезд</p>
+              <p className="text-[12px] md:text-[14px] ">4 звезд</p>
               <span className="bg-[#FFC536]  block mx-auto w-full h-[4px]  rounded-full "></span>
               <p className="text-end text-[12px] md:text-[14px] ">12</p>
             </div>
             <div className="grid grid-cols-[2fr_4fr_1fr] justify-between items-center ">
-              <p className='text-[12px] md:text-[14px] '>3 звезд</p>
+              <p className="text-[12px] md:text-[14px] ">3 звезд</p>
               <span className="bg-[#FFC536]  block mx-auto w-full h-[4px]  rounded-full "></span>
               <p className="text-end text-[12px] md:text-[14px] ">12</p>
             </div>
             <div className="grid grid-cols-[2fr_4fr_1fr] justify-between items-center ">
-              <p className='text-[12px] md:text-[14px] '>2 звезд</p>
+              <p className="text-[12px] md:text-[14px] ">2 звезд</p>
               <span className="bg-[#FFC536]  block mx-auto w-full h-[4px]  rounded-full "></span>
               <p className="text-end text-[12px] md:text-[14px] ">12</p>
             </div>
             <div className="grid grid-cols-[2fr_4fr_1fr] justify-between items-center ">
-              <p className='text-[12px] md:text-[14px] '>1 звезд</p>
+              <p className="text-[12px] md:text-[14px] ">1 звезд</p>
               <span className="bg-[#FFC536]  block mx-auto w-full h-[4px]  rounded-full "></span>
               <p className="text-end text-[12px] md:text-[14px] ">12</p>
             </div>

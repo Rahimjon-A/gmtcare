@@ -61,7 +61,7 @@ const SinglePage = () => {
         </Link>
         <Link>
           <span className="hidden text-[--second] font-medium cursor-pointer  md:flex items-center gap-2 ">
-           { data.title }
+            {data.title}
           </span>
         </Link>
       </div>

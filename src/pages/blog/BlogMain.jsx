@@ -41,16 +41,16 @@ const BlogMain = () => {
       <div className="container grid lg:grid-cols-[1fr_3fr] md:pt-[25px] grid-cols-1 gap-[10px] custom-margin ">
         <CategoryList />
 
-        <div className='flex flex-col'>
-        <PaginationComponent
-        items={blogmain}
-        itemsPerPage={itemsPerPage}
-        renderItems={renderBlog}
-        />
+        <div className="flex flex-col">
+          <PaginationComponent
+            items={blogmain}
+            itemsPerPage={itemsPerPage}
+            renderItems={renderBlog}
+          />
         </div>
       </div>
-      <Mail/>
-      <Footer/>
+      <Mail />
+      <Footer />
     </>
   );
 };

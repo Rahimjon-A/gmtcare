@@ -23,7 +23,9 @@ const AddPhone = () => {
     <ModalCase modalKey="addPhone">
       <div className="px-[25px] py-[20px]">
         <div className="flex justify-between items-center mb-[40px] ">
-          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold ">Изменить Телефон</p>
+          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold ">
+            Изменить Телефон
+          </p>
           <IoCloseSharp
             onClick={() => dispatch(hideModal('addPhone'))}
             className="w-[20px] h-[20px] cursor-pointer "
@@ -38,7 +40,9 @@ const AddPhone = () => {
             value={phone}
             onChange={handleInputChange}
           />
-          <button type="submit" className="btnG w-full">Сохранить</button>
+          <button type="submit" className="btnG w-full">
+            Сохранить
+          </button>
         </form>
       </div>
     </ModalCase>

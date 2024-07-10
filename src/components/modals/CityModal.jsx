@@ -15,9 +15,7 @@ const CityModal = ({ setCity }) => {
   const handleCity = (e) => {
     const value = e.target.value.toLowerCase();
     setInputValue(value);
-    const filteredCities = cityList.filter((city) =>
-      city.city.toLowerCase().includes(value)
-    );
+    const filteredCities = cityList.filter((city) => city.city.toLowerCase().includes(value));
     setSearch(filteredCities);
   };
 

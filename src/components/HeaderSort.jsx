@@ -49,7 +49,7 @@ const HeaderSort = ({ city }) => {
 
             <div className="bg-[--pri] rounded-full text-white p-2 xl:hidden ">
               <span onClick={() => dispatch(showModal('callModal'))}>
-                <FiPhone  className=' cursor-pointer' />
+                <FiPhone className=" cursor-pointer" />
               </span>
             </div>
             <div className=" gap-[10px] hidden xl:flex ">

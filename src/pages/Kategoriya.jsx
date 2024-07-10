@@ -22,7 +22,7 @@ const Kategoriya = () => {
         </Link>
         <Link to={'/catalog'}>
           <span className="text-[--text] cursor-pointer  flex items-center gap-2 ">
-          Каталог <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
+            Каталог <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
           </span>
         </Link>
         <Link>

@@ -29,7 +29,6 @@ const About = () => {
   };
 
   return (
-    
     <div>
       <div className=" container flex pt-[20px] gap-2 custom-text ">
         <Link to={'/'}>
@@ -39,7 +38,7 @@ const About = () => {
         </Link>
         <Link>
           <span className="text-[--second] font-medium cursor-pointer  flex items-center gap-2 ">
-          О компании
+            О компании
           </span>
         </Link>
       </div>

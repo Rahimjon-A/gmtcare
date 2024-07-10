@@ -23,7 +23,7 @@ const Catalog = () => {
         </Link>
         <Link>
           <span className="text-[--second] font-medium cursor-pointer  flex items-center gap-2 ">
-          Каталог
+            Каталог
           </span>
         </Link>
       </div>

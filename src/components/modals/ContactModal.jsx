@@ -26,7 +26,7 @@ const ContactModal = ({ contact, setContact, setMenu }) => {
         <Link
           onClick={() => {
             setContact(0);
-            setMenu(false)
+            setMenu(false);
           }}
           to={'/about/vacancy'}
           className="flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] "
@@ -37,7 +37,7 @@ const ContactModal = ({ contact, setContact, setMenu }) => {
         <Link
           onClick={() => {
             setContact(0);
-            setMenu(false)
+            setMenu(false);
           }}
           to={'/about/comments'}
           className="flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] "
@@ -48,7 +48,7 @@ const ContactModal = ({ contact, setContact, setMenu }) => {
         <Link
           onClick={() => {
             setContact(0);
-            setMenu(false)
+            setMenu(false);
           }}
           to={'/contact'}
           className="flex cursor-pointer hover:text-[--pri] duration-200 hover:underline justify-between items-center py-[15px] border-b border-[--border] "

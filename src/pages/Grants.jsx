@@ -96,8 +96,10 @@ const Grants = () => {
 
       <div className=" container custom-margin">
         <div className="bg-[--pri] text-white  px-[20px] py-[40px] lg:px-[40px] rounded-[10px] border-[--border]  border grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-2 gap-[20px]">
-          <p className="text-[18px] md:text-[20px] lg:text-[30px] font-medium leading-[120%] text-white ">Внимание!</p> 
-          <div className=' custom-text flex flex-col gap-[20px] '>
+          <p className="text-[18px] md:text-[20px] lg:text-[30px] font-medium leading-[120%] text-white ">
+            Внимание!
+          </p>
+          <div className=" custom-text flex flex-col gap-[20px] ">
             <p>
               Рассмотрение заявки на замену товара осуществляется в срок до 30 дней со дня её
               регистрации согласно п. 1 ст. 12 Закона № 59-ФЗ, при условии предоставления

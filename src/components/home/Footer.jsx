@@ -1,44 +1,66 @@
 import FooterSlider from '../../ui/FooterSlider';
-import mastercard from "../../../public/icons/mastercard.svg";
-import visa from "../../../public/icons/visa.svg";
-import mir from "../../../public/icons/mir.svg";
-import vk from "../../../public/icons/vk.svg";
-import telgrem from "../../../public/icons/telegram.svg";
-import whatsapp from "../../../public/icons/whatsapp.svg";
-import logo from "../../../public/icons/footer.svg";
+import mastercard from '../../../public/icons/mastercard.svg';
+import visa from '../../../public/icons/visa.svg';
+import mir from '../../../public/icons/mir.svg';
+import vk from '../../../public/icons/vk.svg';
+import telgrem from '../../../public/icons/telegram.svg';
+import whatsapp from '../../../public/icons/whatsapp.svg';
+import logo from '../../../public/icons/footer.svg';
 import { Link } from 'react-router-dom';
 
-
 const Footer = () => {
-  
-  return (   
+  return (
     <div className="bg-[--pri] ">
       {/* top */}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_3fr_1fr] container gap-[40px] lg:gap-[120px] pt-[15px] sm:pt-[40px] pb-[30px] lg:pb-[47px] ">
         <div className=" hidden sm:block">
           <p className="text-[#F8F7F3] text-[14px] pb-[15px] font-semibold leading-[normal] border-b border-[#F8F7F3] ">
             Покупателям
-          </p>  
+          </p>
           <div className="pt-[15px] text-white flex justify-between ">
             <ul className="flex flex-col gap-2">
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/about"}>О компании</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/about/serticats"}>Сертификаты</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/about/vacancy"}>Вакансии</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/grants"}>Гарантии</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/services"}>Услуги</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/discount"}>Акции</Link></li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/dostavka"}> Доставка</Link></li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/about'}>О компании</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/about/serticats'}>Сертификаты</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/about/vacancy'}>Вакансии</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/grants'}>Гарантии</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/services'}>Услуги</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/discount'}>Акции</Link>
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/dostavka'}> Доставка</Link>
+              </li>
             </ul>
 
             <ul className="flex flex-col gap-2">
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/oplata"}>Оплата</Link></li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/unknown"}>Возврат</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/faq"}>FAQ</Link> </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/unknown"}>Лизинг</Link> </li>
               <li className="text-[12px] lg:text-[14px] ">
-                <Link to={"/about/comments"} >Отзывы</Link>
+                <Link to={'/oplata'}>Оплата</Link>
               </li>
-              <li className="text-[12px] lg:text-[14px] "><Link to={"/blog"}>Блог</Link> </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/unknown'}>Возврат</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/faq'}>FAQ</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/unknown'}>Лизинг</Link>{' '}
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/about/comments'}>Отзывы</Link>
+              </li>
+              <li className="text-[12px] lg:text-[14px] ">
+                <Link to={'/blog'}>Блог</Link>{' '}
+              </li>
             </ul>
           </div>
         </div>
@@ -71,7 +93,10 @@ const Footer = () => {
               <ul className=" flex flex-col gap-2">
                 <li className="text-[12px] lg:text-[14px] ">Новинки</li>
                 <li className="text-[12px] lg:text-[14px] ">Распродажи</li>
-                <li className="text-[12px] lg:text-[14px] "> <Link to={"/kobinet"}>Кабинеты под ключ</Link> </li>
+                <li className="text-[12px] lg:text-[14px] ">
+                  {' '}
+                  <Link to={'/kobinet'}>Кабинеты под ключ</Link>{' '}
+                </li>
                 <li className="text-[12px] lg:text-[14px] ">Скачать каталог</li>
               </ul>
             </ul>
@@ -126,8 +151,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='flex flex-col md:flex-row md:justify-around md:col-[span_2]'>
-
+        <div className="flex flex-col md:flex-row md:justify-around md:col-[span_2]">
           <div className="mb-[30px] ">
             <p className="text-[12px] mb-1 text-white ">Партнерская программа</p>
             <p className="text-[12px] mb-1 text-white ">Оптовые продажи </p>
@@ -141,9 +165,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='mb-[50px] '>
-          <p className='text-[12px] text-white mb-1 '>Способы оплаты</p>
-          <div className='flex items-center gap-4 flex-wrap'>
+        <div className="mb-[50px] ">
+          <p className="text-[12px] text-white mb-1 ">Способы оплаты</p>
+          <div className="flex items-center gap-4 flex-wrap">
             <img src={mastercard} alt="image" />
             <img src={visa} alt="image" />
             <img src={mir} alt="image" />

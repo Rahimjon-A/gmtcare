@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BtnG, BtnW } from '../ui/Btn';
 import { addCompare, setWishlist } from '../reducers/wish';
-import { decrement, increment, handleRemove, handlePrice} from '../reducers/card';
+import { decrement, increment, handleRemove, handlePrice } from '../reducers/card';
 import { showModal } from '../reducers/gmt';
 import HelpModal from '../components/modals/helpModal';
 

@@ -9,9 +9,6 @@ import Footer from '../components/home/Footer';
 import Map from '../components/home/Map';
 
 const Faq = () => {
-
-  
-  
   const itemsPerPage = 10;
 
   const renderAccodion = (currentItems) => (
@@ -53,7 +50,7 @@ const Faq = () => {
           </div>
         </div>
 
-        <div className='border-t border-[--border]  '>
+        <div className="border-t border-[--border]  ">
           <PaginationComponent
             items={faq}
             itemsPerPage={itemsPerPage}
@@ -62,8 +59,8 @@ const Faq = () => {
         </div>
       </div>
 
-      <Map/>
-      <Footer/>
+      <Map />
+      <Footer />
     </>
   );
 };

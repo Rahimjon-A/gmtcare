@@ -4,7 +4,6 @@ import './Accordion.css';
 import Title from './Title';
 
 const Accordion = ({ title, show = true }) => {
-
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -30,7 +29,7 @@ const Accordion = ({ title, show = true }) => {
           </div>
         </div>
 
-        <div className={` ${show ? "border-t border-[--border]" : "" } `}>
+        <div className={` ${show ? 'border-t border-[--border]' : ''} `}>
           {accordionItems.map((item, index) => (
             <div key={index} className={`border-b border-[--border] `}>
               <div

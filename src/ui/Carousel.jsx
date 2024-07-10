@@ -1,8 +1,8 @@
-import  { useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { BtnG,  BtnWG } from '../ui/Btn';
+import { BtnG, BtnWG } from '../ui/Btn';
 import Slider from 'react-slick';
 import Card from './Card';
 import { Link } from 'react-router-dom';
@@ -38,13 +38,12 @@ const Carousel = ({ carousel }) => {
     ],
   };
 
-
   return (
     <>
       <div className="relative  ">
         <Slider ref={sliderRef} {...settings}>
           {carousel.map((item) => (
-              <Card key={item.id} item={item} />
+            <Card key={item.id} item={item} />
           ))}
         </Slider>
       </div>
@@ -68,7 +67,10 @@ const Carousel = ({ carousel }) => {
 
         <div className="flex sm:hidden lg:flex  gap-4">
           <BtnWG title={'Бесплатная консультация'} />
-          <Link to={"/korzinka"} > <BtnG title={'Все товары'} /> </Link>
+          <Link to={'/korzinka'}>
+            {' '}
+            <BtnG title={'Все товары'} />{' '}
+          </Link>
         </div>
       </div>
     </>

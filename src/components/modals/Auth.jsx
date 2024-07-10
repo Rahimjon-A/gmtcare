@@ -5,7 +5,6 @@ import { hideModal, register } from '../../reducers/gmt';
 import { IoCloseSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
-
 const Auth = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -14,12 +13,11 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   dispatch(register({ email, password }));
+    dispatch(register({ email, password }));
     dispatch(hideModal('auth'));
     navigate('/profile');
   };
 
-  
   return (
     <ModalCase modalKey="auth">
       <div className="px-[25px] py-[20px]">

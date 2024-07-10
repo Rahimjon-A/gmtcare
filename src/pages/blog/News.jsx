@@ -34,7 +34,9 @@ const News = () => {
       <div className=" container">
         <div className="py-[20px] md:py-[25px] lg:py-[35px] bg-white rounded-[10px] border-[--border] arr border mt-[40px] md:mt-[50px] lg:mt-[100px] custom-margin ">
           <div className="px-[20px] md:px-[25px] lg:px-[35px]">
-            <p className="custom-title mb-[15px] md:mb-[20px] leading-[105%] ">Информационная статья</p>
+            <p className="custom-title mb-[15px] md:mb-[20px] leading-[105%] ">
+              Информационная статья
+            </p>
             <p className="text-[--text] text-[12px] mb-[27px] ">Автор: Иванов Р.</p>
 
             <div className="mb-[50px] lg:mb-[60px] ">

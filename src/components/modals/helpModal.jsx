@@ -4,7 +4,6 @@ import ModalCase from './ModalCase';
 import { IoCloseSharp } from 'react-icons/io5';
 
 const HelpModal = () => {
-
   const dispatch = useDispatch();
   const handleSliderChange = (e) => {
     e.preventDefault();
@@ -23,7 +22,9 @@ const HelpModal = () => {
             className="w-[20px] h-[20px] cursor-pointer "
           />
         </div>
-        <p className=' custom-text text-[--text] mb-[30px] lg:mb-[40px] '>Наши менеджеры всегда готовы помочь. Напишите нам сообщение</p>
+        <p className=" custom-text text-[--text] mb-[30px] lg:mb-[40px] ">
+          Наши менеджеры всегда готовы помочь. Напишите нам сообщение
+        </p>
         <form onSubmit={handleSliderChange}>
           <div>
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[15px]">

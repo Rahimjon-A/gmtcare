@@ -9,12 +9,12 @@ const ProfileDannie = () => {
   const { dannie } = useSelector((state) => state.gmt);
 
   const [dannieData, setDannieData] = useState({
-    dannie1: "",
-    dannie2: "",
-    dannie3: "",
-    dannie4: "",
-    dannie5: "",
-    dannie6: "",
+    dannie1: '',
+    dannie2: '',
+    dannie3: '',
+    dannie4: '',
+    dannie5: '',
+    dannie6: '',
   });
 
   useEffect(() => {

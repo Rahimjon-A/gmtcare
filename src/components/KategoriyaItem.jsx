@@ -64,14 +64,20 @@ const KategoriyaItem = () => {
 
   return (
     <>
-
-
-      <div className=' container flex gap-[5px] items-center overflow-x-scroll mt-[20px] mb-[25px] '>
-          <button className='whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ' >Дерматологическое оборудование</button>
-          <button className='whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ' >Ветеринарное оборудование</button>
-          <button className='whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ' >Мебель медицинская</button>
-          <button className='whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ' >Ветеринарное оборудование</button>
-         <BtnWG title={"Показать больше"}/>
+      <div className=" container flex gap-[5px] items-center overflow-x-scroll mt-[20px] mb-[25px] ">
+        <button className="whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ">
+          Дерматологическое оборудование
+        </button>
+        <button className="whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ">
+          Ветеринарное оборудование
+        </button>
+        <button className="whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ">
+          Мебель медицинская
+        </button>
+        <button className="whitespace-nowrap text-[12px] lg:text-[14px] bg-white rounded-full border border-[--border] py-[11px] px-[31px] hover:border-[--pri] hover:text-[--pri] duration-200 ">
+          Ветеринарное оборудование
+        </button>
+        <BtnWG title={'Показать больше'} />
       </div>
 
       <div className="mt-[20px] container custom-margin grid grid-cols-1 md:grid-cols-[1fr_3fr] justify-between gap-[10px] ">

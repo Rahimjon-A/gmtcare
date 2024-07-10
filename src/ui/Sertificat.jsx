@@ -39,19 +39,20 @@ const Sertificat = () => {
 
   return (
     <div className="container grid grid-cols-1 lg:grid-cols-[1fr_3fr] overflow-hidden pb-[60px] md:pb-[120px] lg:pb-[150px] ">
-      <div className='mb-[25px] md:mb-[30px] '>
-      <Title text={'Сертификаты на продукцию'} />
+      <div className="mb-[25px] md:mb-[30px] ">
+        <Title text={'Сертификаты на продукцию'} />
       </div>
 
       <div className="overflow-hidden">
         <div className="relative">
           <Slider ref={sliderRef} {...settings}>
             {images.map((image, index) => (
-              <div
-                key={index}
-                className="rounded-[10px] overflow-hidden bg-white p-2  "
-              >
-                <img src={image} alt="image" className='h-[184px] md:h-[212px] lg:h-[248px] object-contain' />
+              <div key={index} className="rounded-[10px] overflow-hidden bg-white p-2  ">
+                <img
+                  src={image}
+                  alt="image"
+                  className="h-[184px] md:h-[212px] lg:h-[248px] object-contain"
+                />
               </div>
             ))}
           </Slider>

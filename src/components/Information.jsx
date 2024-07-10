@@ -18,7 +18,9 @@ const Information = () => {
         <div className="border border-[--border] flex flex-col gap-[40px] md:gap-[50px] lg:gap-[60px] bg-white rounded-[10px] p-[20px] lg:p-[25px]">
           <div className="flex justify-between">
             <div className="flex flex-col lg:gap-[10px] gap-[5px]">
-              <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">Название компании</p>
+              <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
+                Название компании
+              </p>
               <p className="custom-text font-medium">ИНН {dannie?.dannie1}</p>
             </div>
             <AiOutlineEdit
@@ -54,7 +56,10 @@ const Information = () => {
           </div>
         </div>
         <div></div>
-        <div onClick={() => dispatch(showModal('dannieModal'))} className={`flex justify-end mt-[10px]`}>
+        <div
+          onClick={() => dispatch(showModal('dannieModal'))}
+          className={`flex justify-end mt-[10px]`}
+        >
           <BtnG title={'Добавить плательщика'} />
         </div>
       </div>

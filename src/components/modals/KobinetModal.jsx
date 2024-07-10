@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 import { hideModal } from '../../reducers/gmt';
 import ModalCase from './ModalCase';
 import { IoCloseSharp } from 'react-icons/io5';
-import dr3 from "../../../public/images/dr3.png"
-
+import dr3 from '../../../public/images/dr3.png';
 
 const KobinetModal = () => {
   const dispatch = useDispatch();
@@ -12,7 +11,9 @@ const KobinetModal = () => {
     <ModalCase modalKey="kobinetModal">
       <div className="px-[25px] py-[20px]">
         <div className="flex justify-between items-center mb-[40px]">
-          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">Рассчитать стоимость</p>
+          <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
+            Рассчитать стоимость
+          </p>
           <IoCloseSharp
             onClick={() => dispatch(hideModal('kobinetModal'))}
             className="w-[20px] h-[20px] cursor-pointer"
@@ -21,11 +22,7 @@ const KobinetModal = () => {
 
         <div className="flex items-center gap-[10px] mb-[30px]">
           <div className="relative w-[50px] h-[50px] rounded-full  ">
-            <img
-              src={dr3}
-              alt=""
-              className=" w-full h-full object-cover rounded-full "
-            />
+            <img src={dr3} alt="" className=" w-full h-full object-cover rounded-full " />
             <span className=" absolute bg-[--pri] rounded-full w-[10px] h-[10px] top-[5px] right-0"></span>
           </div>
 

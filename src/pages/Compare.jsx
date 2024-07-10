@@ -159,9 +159,8 @@ const Compare = () => {
               <Title text={'Технические характеристики'} />
             </div>
 
-            <ul className=' flex w-full overflow-x-scroll'>
-
-              <li className='border-b'>
+            <ul className=" flex w-full overflow-x-scroll">
+              <li className="border-b">
                 <ul className="flex flex-col  text-[12px] pt-[20px] lg:text-[14px] gap-3 border-b ">
                   <li className="text-[--text] border-b min-w-[200px] pb-[20px]  ">Рейтинг</li>
 
@@ -184,20 +183,28 @@ const Compare = () => {
 
               <li>
                 <ul className="flex-col items-center w-full text-[12px] py-[20px] lg:text-[14px] flex gap-3 border-b ">
-                  <li className="text-[--text]  border-b pb-[20px]  min-w-[250px] ">Скорость работы</li>
+                  <li className="text-[--text]  border-b pb-[20px]  min-w-[250px] ">
+                    Скорость работы
+                  </li>
 
                   {compare.map((item) => (
-                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">60 или 120 тестов в час</li>
+                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">
+                      60 или 120 тестов в час
+                    </li>
                   ))}
                 </ul>
               </li>
-              
+
               <li>
                 <ul className="flex-col text-[12px] py-[20px] lg:text-[14px] flex gap-3 border-b ">
-                  <li className="text-[--text] border-b pb-[20px] min-w-[300px] ">Возможный диапазон длины волны</li>
+                  <li className="text-[--text] border-b pb-[20px] min-w-[300px] ">
+                    Возможный диапазон длины волны
+                  </li>
 
                   {compare.map((item) => (
-                    <li className="border-b pb-[20px] w-full win-w-[300px]  text-[12px] lg:text-[14px] font-semibold ">557, 620, 656 нм</li>
+                    <li className="border-b pb-[20px] w-full win-w-[300px]  text-[12px] lg:text-[14px] font-semibold ">
+                      557, 620, 656 нм
+                    </li>
                   ))}
                 </ul>
               </li>
@@ -207,22 +214,26 @@ const Compare = () => {
                   <li className="text-[--text] border-b pb-[20px] min-w-[250px] ">Тест-полоски</li>
 
                   {compare.map((item) => (
-                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">На 10 или 11 параметров</li>
+                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">
+                      На 10 или 11 параметров
+                    </li>
                   ))}
                 </ul>
               </li>
 
               <li>
                 <ul className="flex-col  text-[12px] py-[20px] lg:text-[14px] flex gap-3 border-b ">
-                  <li className="text-[--text]  border-b pb-[20px] min-w-[250px] ">Функция автоматической калибровки</li>
+                  <li className="text-[--text]  border-b pb-[20px] min-w-[250px] ">
+                    Функция автоматической калибровки
+                  </li>
 
                   {compare.map((item) => (
-                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">Есть</li>
+                    <li className="border-b pb-[20px] w-full win-w-[250px] text-[12px] lg:text-[14px] font-semibold ">
+                      Есть
+                    </li>
                   ))}
                 </ul>
               </li>
-
-
             </ul>
           </div>
         </>

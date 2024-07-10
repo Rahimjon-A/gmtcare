@@ -29,7 +29,7 @@ const Services = () => {
       <div className=" container custom-margin mt-[40px] md:mt-[50px] lg:mt-[100px] ">
         <p className="mb-[30px] lg:mb-[40px]  text-[28px] md:text-[34px] lg:text-[48px] ">Услуги</p>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-[10px] '>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] ">
           {services.map((service) => (
             <ServicesCard key={service.id} service={service} />
           ))}

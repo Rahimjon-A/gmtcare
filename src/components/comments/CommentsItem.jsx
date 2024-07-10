@@ -6,7 +6,11 @@ const CommentsItem = ({ comment }) => {
     <div className="bg-white border border-[--border] rounded-[10px] p-[20px] ">
       <div className="flex justify-between pb-[20px] lg:pb-[25px] ">
         <div className="flex items-center gap-[15px]  ">
-          <img src={commentImg} alt="image" className="w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] " />
+          <img
+            src={commentImg}
+            alt="image"
+            className="w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] "
+          />
           <div>
             <p className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold ">
               ООО Название компании
