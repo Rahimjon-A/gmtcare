@@ -9,11 +9,12 @@ import SingleItem2 from './singleItems/SingleItem2';
 import SingleItem3 from './singleItems/SingleItem3';
 import SingleItem4 from './singleItems/SingleItem4';
 import Single5 from './singleItems/Single5';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { myData } from '../library/myData';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCompare, setWishlist } from '../reducers/wish';
 import { decrement, increment, setCards } from '../reducers/card';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const SinglePage = () => {
   const { id } = useParams();
@@ -47,6 +48,23 @@ const SinglePage = () => {
 
   return (
     <>
+      <div className=" container flex pt-[20px] gap-2 custom-text ">
+        <Link to={'/'}>
+          <span className="text-[--text] cursor-pointer  flex items-center gap-2 ">
+            Главная <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
+          </span>
+        </Link>
+        <Link to={'/catalog'}>
+          <span className="hidden text-[--text] cursor-pointer  md:flex items-center gap-2 ">
+            Каталог <MdKeyboardArrowRight className="w-[20px] h-[20px] " />
+          </span>
+        </Link>
+        <Link>
+          <span className="hidden text-[--second] font-medium cursor-pointer  md:flex items-center gap-2 ">
+           { data.title }
+          </span>
+        </Link>
+      </div>
       <div className="container mb-[60px] md:mb-[120px] lg:mb-[150px] mt-[30px] ">
         {data ? (
           <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] lg:gap-[60px] mb-[40px] lg:mb-[60px] ">

@@ -13,7 +13,6 @@ const initialState = {
 export const cardSlice = createSlice({
   name: 'card',
   initialState,
-
   reducers: {
     handleActive: (state, action) => {
       state.active = action.payload;

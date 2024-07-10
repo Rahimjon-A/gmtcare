@@ -47,7 +47,7 @@ const Dostavka = () => {
         </Link>
         <Link>
           <span className="text-[--second] font-medium cursor-pointer  flex items-center gap-2 ">
-            О компании
+            Доставка
           </span>
         </Link>
       </div>

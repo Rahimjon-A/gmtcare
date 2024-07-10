@@ -21,7 +21,6 @@ const Korzinka = () => {
   useEffect(() => {
     dispatch(handlePrice());
   }, [cards]);
-
   const getStatusStyles = (status) => {
     switch (status) {
       case 'Новинка':
