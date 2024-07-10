@@ -117,7 +117,7 @@ const MobileNav = () => {
               active === 4 ? 'text-[--pri] ' : 'text-[#7A7687]'
             } text-[12px] font-medium leading-[normal] group-hover:text-[--pri] duration-200 cursor-pointer `}
           >
-            Войти
+            Профиль
           </span>
         </Link>
       ) : (

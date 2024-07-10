@@ -11,7 +11,7 @@ const InfoModal = ({ contact, setContact, setMenu }) => {
   return (
     <div
       className={` ${
-        contact == 2 ? 'top-0' : ' top-[-100%] '
+        contact == 2 ? 'top-0' : ' top-[-110%] '
       } duration-200  absolute  z-30 w-full `}
     >
       <div className="bg-[#f8f7f3] px-[15px] h-[100vh] ">

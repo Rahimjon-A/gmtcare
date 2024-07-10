@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 const ContactModal = ({ contact, setContact, setMenu }) => {
   return (
     <div
-      className={` ${
-        contact == 1 ? 'top-0' : ' top-[-100%] '
-      } duration-200  absolute  z-30 w-full `}
+      className={` ${contact == 1 ? 'top-0' : ' top-[-110%]'} duration-200  absolute  z-30 w-full `}
     >
       <div className="bg-[#f8f7f3] px-[15px] h-[100vh] ">
         <div className="border-b flex justify-between pt-[14px] pb-[17px] ">
