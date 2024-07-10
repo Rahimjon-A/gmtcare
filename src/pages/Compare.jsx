@@ -245,7 +245,7 @@ const Compare = () => {
 
           <div className="flex flex-col gap-[20px] lg:gap-[25px] ">
             <p className="text-[18px] md:text-[20px] lg:text-[30px] ">
-              Не добавлено товаров в избранное
+              Не добавлено товаров в  сравнению
             </p>
             <p className="w-[85%] md:w-1/2 custom-text text-[--text] ">
               Вы можете перейти на главную страницу или воспользоваться каталогом товаров

@@ -15,6 +15,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCompare, setWishlist } from '../reducers/wish';
 import { decrement, increment, setCards } from '../reducers/card';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { showModal } from '../reducers/gmt';
+import HelpModal from './modals/helpModal';
 
 const SinglePage = () => {
   const { id } = useParams();
@@ -134,7 +136,7 @@ const SinglePage = () => {
               </p>
               <div className="flex flex-col sm:flex-row  gap-[10px] pb-[25px] border-b-[2px] ">
                 {cardItem ? (
-                  <div className="flex justify-center max-w-[300px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
+                  <div className="flex justify-center max-w-[150px] items-center gap-[20px] text-[12px] py-2 lg:py-[8px] px-[20px] lg:px-[20px] border border-[--border]  rounded-full  ">
                     <FaMinus
                       onClick={() => dispatch(decrement(data.id))}
                       className="hover:text-[--pri] cursor-pointer "
@@ -151,7 +153,9 @@ const SinglePage = () => {
                   </div>
                 ) : null}
                 <div className="flex gap-[10px] ">
-                  <BtnGG title={'Задать вопрос'} />
+                  <span onClick={() => dispatch(showModal('helpModal'))}>
+                    <BtnGG title={'Задать вопрос'} />{' '}
+                  </span>
                   <span
                     onClick={() =>
                       dispatch(setCards({ ...data, amount: cardItem ? cardItem.amount + 1 : 1 }))
@@ -252,6 +256,7 @@ const SinglePage = () => {
           <Single5 />
         </div>
       </div>
+      <HelpModal />
     </>
   );
 };

@@ -47,13 +47,7 @@ const Footer = () => {
                 <Link to={'/oplata'}>Оплата</Link>
               </li>
               <li className="text-[12px] lg:text-[14px] ">
-                <Link to={'/unknown'}>Возврат</Link>{' '}
-              </li>
-              <li className="text-[12px] lg:text-[14px] ">
                 <Link to={'/faq'}>FAQ</Link>{' '}
-              </li>
-              <li className="text-[12px] lg:text-[14px] ">
-                <Link to={'/unknown'}>Лизинг</Link>{' '}
               </li>
               <li className="text-[12px] lg:text-[14px] ">
                 <Link to={'/about/comments'}>Отзывы</Link>
